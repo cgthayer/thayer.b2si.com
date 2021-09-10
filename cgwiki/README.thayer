@@ -1,0 +1,16 @@
+Customization for themes lives in:
+
+	/usr/share/moin/htdocs/THEME/css/*
+	cgwiki/data/plugin/theme/THEME.py
+
+en ~/moin-test/share/moin/htdocs/hexagonal/css/common.css \
+   data/plugin/theme/hexagonal.py
+
+Original moin themes:
+
+	/usr/lib/python2.4/site-packages/MoinMoin/theme/modern.py
+
+
+
+
+

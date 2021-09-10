@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- base href="http://thayer.b2si.com/" -->
+  <link rel="icon" href="images/cs-favicon.ico" type="image/x-icon" />
+  <title>Django DRF Cheat Sheet</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	  crossorigin="anonymous"></script>
+
+  <!-- sumo -->
+  <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='22cb51ba7caae4c7787809bad98ea8216c342a4720087f1f1bde272f364ff494';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+  
+  <!-- adsense support (login: denmark@ny.com) -->
+  <script data-ad-client="ca-pub-6143770949021679" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1660181-11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-1660181-11');
+  </script>
+  
+  <style>
+  body, td, p {
+    font-family: Verdana, Arial, Helvetica, Chicago, sans-serif;
+    font-size: 12px;
+  }
+  td {
+    padding: 0.25em;
+  }
+  pre {
+    font-size: 11px;
+    margin: 0px;
+    padding: 0.25em;
+  }
+  .sh {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0.25em 0px 0.25em 0px;
+  }
+  h4 {
+    font-weight: bold;
+  }
+  ul {
+    padding-inline-start: 1em;
+  }
+
+  .panel {
+    background-color: transparent;
+  }
+  .panel-primary>.panel-heading {
+    background-image: none;
+    background-color: #0066CC;
+    border-color: #0066CC;
+  }
+  .panel-primary {
+    margin-bottom: 0.5em;
+  }
+  .panel-heading {
+    padding: 0.5em;
+  }
+  .panel-body {
+    padding: 0.5em;
+    background-color: transparent;
+  }
+  </style>
+</head>
+<body bgcolor="#FFFFFF" background="images/hex-bg-grid.gif">
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 style="font-size: 14pt;"><b>Django DRF Cheat Sheet</b>
+	<a href="http://thayer.b2si.com/"><img src="icons-thayer/document.gif" align=right></a>
+      </h1>
+      <hr noshade style="height: 1px;">
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <h4 class="panel-title">Django DRF Cheat Sheet</h4>
+	</div>
+	<div class="panel-body">
+          <p><b><i>Here's the PDF: <a href="https://bit.ly/django-drf-cheat-sheet">Django DRF
+              Cheat Sheet</a> v1.3, and <a href="#cheatsheet">HTML</a></i></b>
+          </p>
+          <blockquote><i>Welcome. This is a guide to the parts of DRF
+              (Django Rest Framework) that I routinely forget or need to
+              reference periodically.  This is not a learning resource nor
+              a tutorial, but intended for those already programming in
+              DRF.<br>
+              - <a href="http://thayer.b2si.com/">Charles Thayer</a>
+          </i></blockquote>
+
+          <p>Got constructive feedback? <a href="https://forms.gle/QN5fWpgGFZXBCfy96">Let me know</a><br>
+            (Want a new or different cheat sheet? DRF Basics, Django, CBV, Firebase?)
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <h4 class="panel-title">Info</h4>
+	</div>
+	<div class="panel-body">
+	  <ul>
+            <!-- drf-cheatsheet.pdf -->
+	    <li>PDF document: <a href="https://bit.ly/django-drf-cheat-sheet">Django DRF Cheat
+ Sheet</a> v1.3</li>
+	    <li>Official site: <a href="https://www.django-rest-framework.org/">Django REST Framework</a></li>
+            <li>Official tutorial: <a href="https://www.django-rest-framework.org/tutorial/quickstart/">Quickstart Tutorial</a></li>
+            <li>Real Python's single-page tutorial: <a href="https://realpython.com/django-rest-framework-quick-start/">Django Rest Framework – An Introduction</a></li>
+            <li>Sunscrapers' multi-part tutorial: <a href="https://sunscrapers.com/blog/ultimate-tutorial-django-rest-framework-part-1/">The Ultimate Tutorial for Django REST Framework: CRUD (Part 1)</a></li>
+            <li>Agiliq's book for learners: <a href="https://books.agiliq.com/projects/django-api-polls-tutorial/en/latest/">Building APIs with Django REST Framework</a></li>
+            <li>GitLab Repo for cheat sheet code: <a href="https://gitlab.com/cgthayer/drf-cheatsheet">drf-cheatsheet</a></li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <h4 class="panel-title">About</h4>
+	</div>
+	<div class="panel-body">
+
+          <p>
+            I've been using Django and DRF off and on for way too
+            long. Lately, I've been working as the CTO of a startup in
+            San Francisco that built a mobile app for "managed
+            messaging" for businesses and professionals. That project
+            incorporated a fair amount of API/Javascript communication,
+            which lead me to take notes on the parts of DRF that I
+            needed to review periodically.</p>
+
+          <p>
+            I hope you find it helpful and provide constructive
+            feedback.  If enough people do, I'll continue to update
+            and distribute it.  Thanks.</p>           
+          
+          -- <a href="http://thayer.b2si.com">Charles Thayer</a> (thayer at b2si com)
+	</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------------------------------------------------------------------- -->
+  <a name="cheatsheet"></a>
+  <div class="row">
+    <!-- left -->
+    <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <h4 class="panel-title">Serializers</h4>
+	</div>
+	<div class="panel-body">
+          <h3>Serialize:</h3>
+
+          <p>
+            <img src="images/serializer-code.png" width="160px"/>
+            <pre># Object instance -> Data dict
+s = Serializer(instance)
+s.data</pre></p>
+
+          <h3>Deserialize (create):</h3>
+          <p>
+            <img src="images/deserializer-code.png" width="160px"/>
+            <pre># dict -> Object
+s = Serializer(data={..})
+s.is_valid()
+instance = s.save()</pre></p>
+
+          <h3>Validation:</h3>
+          <pre>
+s = Serializer(data={..})
+if s.is_valid(raise_exception=False):
+  s.validated_data
+else:
+  s.errors  # dict(field=[problems..])</pre>
+          
+          <h3>Update:</h3>
+          <pre>
+s = Serializer(instance, validated_data, partial=True)
+new = s.save()</pre>
+
+          <h3>Serializer Classes:</h3>
+          <pre>
+class SimpleSerializer(serializers.Serializer):
+  name = serializers.CharField(max_length=128)
+  user = UserSerializer(required=false)  # nested
+  ...
+
+def create(self, validated_data):
+  kwargs = self.context['view'].kwargs
+  ...
+  return instance
+
+def update(self, instance, validated_data):
+  # if self.partial
+  ...
+  return instance
+
+def save(self, **kwargs):
+  # instance = super().save(**kwargs)
+  nm = self.validated_data.get('name')
+  ...
+  instance = model_object.save()
+  return instance
+
+# def validate_<field>(self, name):
+def validate_name(self, name):
+  if not name:
+    raise serializers.ValidationError('Name required')
+  ...
+  return name
+
+def validate(self, data):
+  nm = data.get('name')
+  if not nm:
+    raise serializers.ValidationError({'name': ..})
+  ...
+  return validated_data
+
+class DbSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = DbModel
+    fields = [..]
+    list_serializer_class = DbListSerializer
+  def to_representation(self, obj) → Dict
+  def to_internal(self, data) → Dict # validated
+</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- middle -->
+    <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <h4 class="panel-title">Basics</h4>
+	</div>
+	<div class="panel-body">
+          <p>
+            <h3>Serializers</h3>
+            <table cellpadding="4em">
+              <tr><td>Create</td><td>Serializer(data={..}); s.save(): Object</td></tr>
+              <tr><td>Serialize</td><td>Serializer(instance); s.data: Dict</td></tr>
+              <tr><td>Update</td><td>Serializer(instance, data={..}, partial=True)</td></tr>
+              <tr><td>Set</td><td>Serializer(instance, data={..})</td></tr>
+            </table>
+          </p>
+
+          <p>
+            <h3>Serializer Fields:</h3>
+            <ul>
+              <li>Common: CharField, UUIDField, NullBooleanField, DateTimefield, JSONField, EmailField, ..</li>
+              <li>Special: SerializerMethodField, RelatedField, PrimaryKeyRelatedField, SlugRelatedField, HyperlinkedRelatedField..</li>
+            </ul>                                                                                           
+          </p>
+
+          <p>
+            <h3>Field Args</h3>
+            <table border="1px">
+              <tr><th></th><th>Default</th><th>Input</th><th>Output</th><th>Notes</th></tr>
+              <tr><td>read_only</td><td>False</td><td>no</td><td>yes</td><td></td></tr>
+              <tr><td>write_only</td><td>False</td><td>yes</td><td>no</td><td></td></tr>
+              <tr><td>required</td><td>True</td><td>yes</td><td>yes</td><td>raise if missing</td></tr>
+              <tr><td>allow_null</td><td>False</td><td></td><td></td><td>None is allowed</td></tr>
+              <tr><td>default</td><td>&lt;value&gt;</td><td>sets</td><td></td><td>If set, don’t use the arg “required”</td></tr>
+              <tr><td>source</td><td colspan=4>the python form of field access like "user.address.zip" (not double underscore)
+                  OR a callable name on the object like get_primary_phone()</td></tr>
+            </table>
+          </p>
+
+          <p>
+            <h3>Request</h3>
+            <ul>
+              <li>request.data - dict of (post, put, patch)</li>
+              <li>request.query_param (get)</li>
+              <li>request.user (django.contrib.auth.models.AnonymousUser)</li>
+              <li>request.auth (usually a model instance)</li>
+              <li>HTTP stuff: request.method (e.g. GET), .content_type (e.g. application/json), .META, .headers, .path</li>
+            </ul>
+          </p>
+
+          <h3>view() functions</h3>
+          <pre>
+# urls.py
+urlpatterns = [
+  path(r'viewfn/<int:arg1>/', views.my_view_fn),
+]</pre>
+
+          <pre># views.py
+from django.http import JsonResponse
+...
+  def my_view_fn(request, arg1=None):
+    if request.method == ‘POST’:
+      return JsonResponse({}, status=201)</pre>
+          
+          <h3>Testing</h3>
+          <pre>
+from rest_framework.test import APIClient, APITestCase
+
+class MyTests(APITestCase):
+  def test_basics(self):
+    client = APIClient()
+    response = client.post(
+      f'/viewtest/{arg1}', data={..})
+    assert response.status_code == 200
+    assert response.json().get(‘name’) == name</pre>
+
+          <h3>Views</h3>
+          <pre>
+class SimpleView(APIView):
+  def post(self, request, *args, **kwargs):
+    request.data.get(‘name’)
+    return Response(..)
+  def get(self, request, *args, **kwargs):
+    request.query_params.get(‘name’)
+    ...
+  def patch(self, request, *args, **kwargs):
+    ...
+  def delete(self, request, *args, **kwargs):
+    ...</pre>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- right -->    
+    <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <h4 class="panel-title">ViewSets</h4>
+	</div>
+	<div class="panel-body">
+
+          <p>
+            <table>
+              <tr valign=top>
+                <td><img src="images/flow-overview.png" width="80px"/></td>
+                <td><img src="images/flow-cbv.png" width="100px"/></td>
+                <td><img src="images/flow-viewset.png" width="140px"/></td>
+              </tr>
+            </table>
+          </p>
+          
+          <h3>ViewSets (ModelViewSets)</h3>
+          <pre>
+from rest_framework import permissions
+
+class SimpleViewSet(ViewSet):  # ModelViewSet
+  serializer_class = SimpleSerializer
+  # queryset = SimpleModel.objects.all()
+  lookup_field = 'field'
+  authentication_classes = (..,)
+  permissions_classes = (permissions.IsAuthenticated,)
+  # permissions_classes = (permissions.AllowAny,)
+  # filter_backends = (..,)
+   def create(self, request, *args, **kwargs):
+      return Response(..)
+
+  def update(self, request, *args, **kwargs):
+  def partial_update(self, request, *args, **kwargs):
+  def destroy(self, request, *args, **kwargs):
+  def retrieve(self, request, *args, **kwargs):
+  def list(self, request, *args, **kwargs):
+
+  def get_queryset(self):
+    # related to self.queryset
+    data = self.request.data
+    qp = self.request.query_params
+    kwargs = self.kwargs  # args for view
+
+  def get_object(self): → instance
+    # see self.lookup_field
+
+  def get_serializer(self):
+  def get_serializer_context(self):
+    ...
+    return dict(request=..., view=...
+
+  @detail_router([‘GET’, ‘POST’])
+  def custom(request, *args, **kwargs):
+    ...</pre>
+
+          <pre># urls.py
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(
+    r'viewset',
+    example.SimpleViewSet,
+    basename='Simple’
+)
+            
+urlpatterns = [
+    path(r‘’, include(router.urls)),
+    ...</pre>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

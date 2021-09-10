@@ -1,0 +1,27 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:725: minix/config.h: No such file or directory
+ld: fatal: library -lsun: not found
+ld: fatal: File processing errors. No output written to conftest
+collect2: ld returned 1 exit status
+Undefined			first referenced
+ symbol  			    in file
+makedev                             /var/tmp/cczHJvEb.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+ld: fatal: library -ldir: not found
+ld: fatal: File processing errors. No output written to conftest
+collect2: ld returned 1 exit status
+configure: In function `t':
+configure:1663: structure has no member named `tm_zone'
+configure:1804: warning: conflicting types for built-in function `memcmp'
+configure:1804: warning: conflicting types for built-in function `memset'
+Undefined			first referenced
+ symbol  			    in file
+stpcpy                              /var/tmp/ccI306If.o
+ld: fatal: Symbol referencing errors. No output written to conftest
+collect2: ld returned 1 exit status
+ld: fatal: library -lseq: not found
+ld: fatal: File processing errors. No output written to conftest
+collect2: ld returned 1 exit status

@@ -1,0 +1,274 @@
+*** Not Currently Seeking Work ***
+
+See also: http://thayer.b2si.com/resume2003.html
+          http://thayer.b2si.com/resume2003.doc
+
+			 Charles Thayer
+	     thayer@b2si.com, Cell: +1.415.378.5924
+		 San Francisco, +1.415.648.1456
+
+Summary: 
+
+    Objective: To find a position as a senior engineer for a
+    company building industrial-strength, back-end systems, where
+    I can solve problems that require scalable, high performance,
+    and robust solutions.
+
+    Experience: Designing scalable software systems and
+    architectures; Building products, technology, and
+    infrastructure; And deploying and maintaining online
+    services.
+
+
+Technical Skills: 
+
+       Languages: C/C++ (13 yrs), Java (2 yrs), Perl (7 yrs),
+                  Python (2 yrs). Plus: PHP, Javascript, Tcl/Tk,
+                  Unix Shell (Bash, KSH), and others.
+
+       Databases: SQL (Oracle, Sybase), Database and Schema
+                  Design, Oracle PL/SQL, Sybase T-SQL,
+                  Postgres/MySQL/Msql, Oracle OCI-8.
+
+  OS Programming: Linux (SuSE, RedHat), UNIX (Solaris 2.x,
+                  FreeBSD, HPUX), Windows 2000/NT.
+
+        Security: Cybercash/E-Commerce/SSL, PGP/PKI.
+
+      Networking: TCP/IP, UDP, HTTP, SSL, DNS/Bind, IRC/Jabber,
+                  LDAP, YP/NIS, NFS, BOOTP/TFTP/DHCP, FTP, LPD,
+                  Inetd, Tcpd, Gopher, NNTP, Amd, etc.
+
+    Technologies: OOP & OOD (Object-Oriented Programming and
+                  Design), Async programming / Threads,
+                  SGML/HTML/XML/XMLRPC. Plus: UML, Apache
+                  Modules, PDF/PS/LZW, Linux Kernels & Device
+                  Drivers, and others.
+
+
+Work Experience: 
+
+    * Design: Plan and develop company-wide software libraries,
+      APIs, protocols, databases, and other infrastructure.
+    * Review: Conduct code reviews, system design reviews,
+      performance analysis, technical mentoring.
+    * Test: Design and build unit tests, system tests, and
+      staging / roll-out environments.
+    * Lead: Evaluate feasibility and suitability of designs and
+      technologies, given business and resource constraints.
+    * Run: Maintain and operate online services with e-commerce
+      transactions 24x7.
+
+
+Work Experience Highlights: 
+
++ 6/2001 to 2/2003 (1 yr, 9 mon)
+  Senior Engineer
+  Tapstone Inc., Walnut Creek, CA. (Startup, 12 dev, 20 total)
+
+  Tapstone's Server Change Center is an IT tool for managing
+  enterprises with hundreds to thousands of machines. Agent
+  software running on each computer detects changes to the file
+  system, the registry, and configuration files (on both Solaris
+  and Windows.) These agents each communicate a stream of events
+  in real-time to a central appliance (running Linux and
+  Postgres.)
+
+  * Designed the distributed network agent for portability,
+    scalability, and low-impact.
+  * Wrote low-level back-end software for Solaris, Linux, and
+    Windows NT in Python and C++. Implemented hardware scanner,
+    control daemon, and various libraries.
+  * Reviewed code, unit tests, system tests, and design work as
+    the lead engineer of the agent group (4-6 developers,
+    including myself.)
+  * Designed APIs, libraries, and protocols as lead engineer of
+    the architecture team during system design phases.
+  * Reviewed system-wide design and implementation choices to
+    support the goals of high performance, fail-safe operation.
+  * One of the authors of the provisional patent application:
+    Management and Monitoring System for Distributed Computer
+    Networks.
+
+  Technologies: Systems Programming (cross-platform); Python,
+                C++, Java; TCP/IP, XMLRPC, SQL.
+
+
++ 3/2000 to 6/2001 (1 yr, 3 mon)
+  Chief Technology Officer (CTO) 
+  CityRealty.com Inc., NYC (Dot-com, 8 developers, 16 people)
+
+  Built the technology for "The New York City Real Estate
+  Exchange." CityRealty.com was a small on-going venture with new
+  funding, from Goldman Sachs, to create sophisticated web
+  personalization services for residential real-estate brokers,
+  buyers, renters, and customer service representatives.
+
+  * Designed the software systems and databases behind the
+    website.
+  * Built the calendaring and scheduling applications. Utilized
+    web and email interfaces with an Oracle back-end to track and
+    coordinate face-to-face meetings and resolve conflicts.
+  * Designed and developed core PHP libraries for interfacing to
+    the Oracle database. Implemented various core libraries for
+    personalization and saved searches.
+  * Designed and implemented software roll-out process from
+    development, to QA, to production servers.
+
+  Technologies: PHP, Apache; Oracle; Solaris, Linux. 
+
+
++ 10/1994 to 3/2000 (5 yr, 5 mon)
+  Chief Scientist, Founder 
+  Mediabridge Infosystems Inc., NYC
+  (Consulting Firm, staff of 4-6 plus sub-contractors)
+
+  Built a small firm that provided Internet technology and
+  consulting to businesses based on the Web in New York City. The
+  following projects reflect a sample of the technical work
+  designed and built by myself for the company:
+
+  + 1995 - 1998 (3 yrs, various contracts)
+    Metrobeat.com: NYC City Guides
+    aka: Citysearch / Ticketmaster 
+
+    Tools: Oracle Database Design, Oracle OCI-7, Perl CGI, C,
+           PL/SQL, Javascript, HiTS
+
+    New York City local guide, with a large database of events
+    and locations. Later purchased by CitySearch and deployed
+    nation-wide, then merged with TicketMaster.
+
+    * Implemented system that published the 40,000 page website
+      daily using a dozen templates and a large Oracle database.
+    * Designed and wrote the template engine in C and the apache
+      module which connected it to Oracle. (see Mediabridge's
+      HiTS System below).
+    * Built advanced personalization features including:
+      customized homepage, saved search, email-a-friend, favorite
+      locations, performer alerts, messaging, email
+      notifications, etc.
+
+
+  + J.P. Morgan (D.I.D. Inc.): Web-based training library (6 mon)
+    Tools: Perl CGI, Javascript
+
+    "Virtual Librarian" for storing online training tools. The
+    system managed the storage, permissioning, and indexing of
+    multimedia documents. The system supported users, groups, and
+    administrators whose access was integrated with website
+    access (Apache). The system was installed by several
+    departments within J.P. Morgan.
+
+
+  + DDB Needham: Advertising Agency Intranet (9 months)
+    Tools: Perl CGI & Perl, SQL, HiTS 
+
+    Intranet and online library for world-wide management of
+    creative and multimedia content used in pitches and
+    campaigns. Pitches for print, radio, TV, and the web are
+    uploaded and indexed automatically so that any employee
+    world-wide can make a presentation for new work which is
+    consistent with prior pitches by DDBN to the same client.
+
+
+  + ReturnMe.com: E-Commerce site (2 years, various contracts).
+    Tools: Cybercash E-Commerce, SSL, Perl CGI, PHP 
+
+    System provides a virtual "Lost & Found" for the Internet. Kits
+    of labels with unique IDs are sent to each customer for
+    placement on valuables (phones, laptops, PDAs.) Created
+    various web tools for credit card and order processing,
+    fulfillment, and data collection.
+
+
+  + Bartleby.com: Large SGML/XML library (6 months).
+    Tools: Perl, SGML/XML 
+
+    Built translators for converting gigantic XML/SGML documents
+    into web content. Focused primarily on the American Heritage
+    Dictionary with over 90,000 entries, as well as several
+    others. This project involved extensive and complex SGML
+    DTDs.
+
+
+  + Morgan Stanley / Dean Witter: Banking, 
+    (3.5 years, various contracts and departments).
+
+    Morgan Stanley is a large institutional investor, and a
+    provider of technology and research services to the banking
+    community. Many projects were built for different departments
+    over several years, including the following:
+
+    + ClientLink 2.0: Web-based research tool
+      Tools: Perl CGI, Sybase, Javascript 
+
+      Tools for accessing the Equities Research portion of Morgan
+      Stanley's subscription offering to institutional
+      investors. (Details under NDA). The projects required
+      strict security, complex authentication, and fine-grained
+      web personalization. The application ran complex business
+      rules, included copious transaction logging, and required
+      careful performance optimization.
+
+    + WSRAPI 1.0 & 2.0: Web-based data feeds
+      Tools: Perl, Sybase, Distributed Databases 
+
+      Implemented database synchronization protocol for delivery
+      of analyst research recommendations to Fidelity
+      Brokerage. This was part of an industry-wide competitive
+      process to integrate provider databases to a Fidelity
+      specification over the Web. We were one of the first three
+      teams to complete and pass all of Fidelity's acceptance
+      tests.
+
+
+  + NY.com: NYC City Guide
+    Mediabridge Infosystems Inc., NYC
+    Tools: Developed and managed website. 
+
+    Website which Mediabridge has owned, maintained, and operated
+    since 1994. Provides a guidebook to NYC with over 1,000 web
+    pages of content, 1,000,000 page views per month, and 200,000
+    unique visitors per month. NY.com was the first website
+    devoted to New York City, and has remained profitable through
+    a number of business affiliate relationships.
+
+
+  + HiTS System: Web publishing tool & template system
+    Tools: C, Perl, Tcl, Python 
+
+    Hyper-text infrastructure and Template System. A template
+    system (not unlike PHP or ColdFusion) which parses SGML-like
+    documents to produce web pages. System includes support for
+    databases (Postgres, MySQL, mSQL, Oracle OCI-7 and OCI-8),
+    keeps persistent database connections, supports embedded
+    languages (Tcl, Perl, Python), and can operate as an Apache
+    module.
+
+
+  + 1/1994 to 11/1994 (10 months)
+    Consultant / Programmer: Firewall GUI 
+    SOS Corporation, dba HydraWeb Inc.
+
+
+  + 9/1991 to 6/1995 (3 yr, 9 mon)
+    Systems Administrator: Unix sys-admin., large installation
+    Columbia University, Department of Computer Science, CRF
+
+    Expanded research servers and labs under a $5 million dollar
+    NSF grant. Invented a modular connector for a communication
+    line. Worked with John Lakos author of "Large Scale C++
+    Software Design." Teaching Assistant: Object-Oriented Design
+    and C++, Networks, C-Programming, Scientific Computation.
+
+
+Education: 
+    1987-1991: Columbia University, School of Engineering and
+               Applied Science Bachelors of Science in Electrical
+               Engineering (BSEE), with some graduate studies in
+               VLSI design.
+
+Recommendations: Available upon request.
+
+Last Revised $Date: 2003/03/04 17:28:22 $ 

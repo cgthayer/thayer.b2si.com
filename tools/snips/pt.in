@@ -1,0 +1,14 @@
+123	a	b
+321	b	a
+123	a	c
+34	c	a
+x	c	b
+y	b	c
+123	x	y
+123	y	x
+321	z	y
+321	y	z
+321	x	z
+321	z	x
+321	z	a
+321	a	z

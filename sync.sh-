@@ -1,0 +1,7 @@
+#!/bin/bash
+
+scp resume2010.html mbops@mediabridge.com:webapps/thayer_b2si/resume2010.html
+#rsync --progress -av --delete . \
+#  serveradmin@mediabridge.com@mediabridge.com:domains/thayer.b2si.com/html \
+#  --exclude=\*cgwiki\* --exclude=sync.sh
+

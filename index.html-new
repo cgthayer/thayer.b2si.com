@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- base href="http://thayer.b2si.com/" -->
+  <link rel="SHORTCUT ICON" href="http://thayer.b2si.com/favicon.ico"/>
+  <title>Charles Thayer's Homepage: 2017</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	  crossorigin="anonymous"></script>
+
+  <style>
+  body, td, p {
+    font-family: Verdana, Arial, Helvetica, Chicago, sans-serif;
+    font-size: 12px;
+  }
+  .sh {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  h4 {
+    font-weight: bold;
+  }
+
+  .panel {
+    background-color: transparent;
+  }
+  .panel-primary>.panel-heading {
+    background-image: none;
+    background-color: #0066CC;
+    border-color: #0066CC;
+  }
+  .panel-primary {
+    margin-bottom: 0.5em;
+  }
+  .panel-heading {
+    padding: 0.5em;
+  }
+  .panel-body {
+    padding: 0.5em;
+    background-color: transparent;
+  }
+  </style>
+</head>
+<body bgcolor="#FFFFFF" background="images/hex-bg-grid.gif">
+
+<!--
+<img src="icons-thayer/document.gif" align=right>  
+<span class="sh">CGT</font>: 
+Charles Thayer's Homepage
+(<a href="http://thayer.b2si.com/">thayer.b2si.com</a>)</span>
+<hr noshade size="1">
+-->
+
+<div class="container">
+<div class="row">
+  <div class="col-xs-12">
+    <!-- ------------------------------------------------------------ -->
+    <!-- extra width -->
+    <img src="images/1.gif" border=0 width=310 height=1><br>
+
+    <center>
+      <table border=0 cellpadding=0 cellspacing=0 width=300>
+	<!-- helps browser align -->
+	<tr>
+	  <td width="50" height="0"></td>
+	  <td width="50" height="0"></td>
+	  <td width="50" height="0"></td>
+	  <td width="50" height="0"></td>
+	  <td width="50" height="0"></td>
+	  <td width="50" height="0"></td>
+	</tr>
+	<tr>
+	  <td width=50 height=75 align=center valign=center></td>
+	  <td background="images/hex-dir-nw.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ></td>
+	  <td background="images/hex-dir-ne.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ><img src="icons-thayer/folder.gif"
+		    border=0><br><b>Work</b></td>
+	  <td width=50 height=75 align=center valign=center></td>
+	</tr>
+
+	<tr>
+	  <td background="images/hex-dir-w.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ><img border=0
+		    src="icons-thayer/folder.gif"><br><b>Startups</b></td>
+	  <td background="images/hex-dir-mid.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ><img src="icons-thayer/document.gif"><br><b>Charles<br>Thayer</b></td>
+	  <td background="images/hex-dir-e.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ></td>
+	</tr>
+
+	<tr>
+	  <td width=50 height=75 align=center valign=center> </td>
+	  <td background="images/hex-dir-sw.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ></td>
+	  <td background="images/hex-dir-se.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ><img	src="icons-thayer/folder.gif"
+			border=0><br><b>Personal</b></td>
+	  <td width=50 height=75 align=center valign=center></td>
+	</tr>
+      </table>
+    </center>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+	<h4 class="panel-title">Startups</h4>
+      </div>
+      <div class="panel-body">
+	<ul>
+	  <li>Founder: <a href="https://cityscout.us/">CityScout.us</a> mobile web app</li>
+	  <li>Early Manager: Tapstone, enterprise management</li>
+	  <li>CTO: CityRealty Inc. (<a href="https://www.cityrealty.com">CityRealty.com</a>)</li>
+	  <li>Founder: Mediabridge Infosystems Inc. (<a href="https://ny.com">NY.com</a>) consulting firm</li>
+	  <li>Implementor and advisor to several others...</li>
+	</ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+	<h4 class="panel-title">Work</h4>
+      </div>
+      <div class="panel-body">
+	<ul>
+	  <li><a href="resume2017.html">Resum&eacute; 2017</a>
+	    <!--
+		<a href="resume2010.html">2010 html</a> /
+		<a href="resume2003.html">2003 html</a> /
+		<a href="resume2003.doc">2003 doc</a> /
+		<a href="resume2003.txt">2003 text</a>.<br>
+		-->
+	  <li><a href="http://www.linkedin.com/in/cgthayer">LinkedIn Profile</a></li>
+	  <li><a href="https://github.com/cgthayer">GitHub</a>:
+	    <a href="https://github.com/facebook/folly">folly</a>,
+	    <a href="https://github.com/facebook/jcommon">jcommon</a>
+	  <li><a href="http://facebook.com/">Facebook</a></li>
+	  <li>Yahoo! Search Technology (Inktomi)</li>
+	  <li>Tapstone Inc (Teleias Inc.)</li>
+	  <li><a href="http://www.cityrealty.com/">CityRealty.com</a></li>
+	  <li><a href="http://www.mediabridge.com/front.html">Mediabridge Infosystems</a></li>
+	  <li><a href="http://www.cs.columbia.edu/">CS Dept, Columbia U.</a></li>
+	</ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+	<h4 class="panel-title">Personal</h4>
+      </div>
+      <div class="panel-body">
+	<ul>
+	  <li><a href="http://facebook.com/cgthayer">My Facebook page</a></li>
+	  <li>Graduate of EE from Columbia U.</li>
+	  <li>Lived in: San Francisco, New York City</li>
+	  <li><a href="https://www.facebook.com/mckinley.garden.friends/">McKinley Garden Friends</a></li>
+	  <li>Interests: <a href="http://bit.ly/2jFs26n">Gardening</a>, Tinkering, Woodworking, Startups</li>
+	  <li>Links:
+	    <a href="https://www.pinterest.com/cgthayer/">Pinterest</a>,
+	    <a href="http://del.icio.us/cgthayer/">Del.icio.us</a>,
+	    <a href="https://twitter.com/cgthayer">Twitter</a>
+	  </li>
+	  <li>Favorite numbers: <a href="http://en.wikipedia.org/wiki/6_%28number%29">6</a>,
+	    <a href="https://en.wikipedia.org/wiki/Golden_ratio">&phi;</a>
+	  </li>
+	</ul>	
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</div>

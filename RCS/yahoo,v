@@ -1,0 +1,87 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2010.03.18.05.04.44;	author thayer;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2010.03.18.04.09.12;	author thayer;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@routine
+@
+text
+@
+Worked on web search content systems for 7 years, with 4 managers, on
+3 teams, during 5 cluster doublings, with thousands of nodes per
+cluster.  Mainly worked on cluster management and monitoring software
+(C++) and the operation of the production web crawlers.
+
+Content Operations Team: Managed the deployment, operations, and
+monitoring of production web crawler clusters in distributed data
+centers.  Typical projects included moving 1.8 PB across coasts.
+Catalog Agility Project: Primary architect on crawler scalability and
+data storage changes (C++).
+
+Crawler Team: Catalog Master: Built and extended cluster
+management and monitoring software for managing thousands of nodes
+(C++).  Many projects ranging from investigating problems based on
+statistical anomolies in freshness, comprehensiveness, and quality
+(Python) to writing disk burnin software (C) used by all of YST (Yahoo
+Search Technology).  Wrote CTA package (Cluster Trends Analyzer) in
+Python and CluStats (Cluster Stats and alerts) libraries in C++.
+
+Echelon Team: Echelon Master: worked on cluster management
+software for controlling indexing pipeline and batch processing (C++).
+Echelon Copier (EchCp in C &amp; C++): cross-coast database distribution
+software with extensive performance throttling controls for delivery
+production index data to other groups.
+
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 5
+a5 1
+# Projects: CatAgility, CTA, CluStats, CatMaster, EchCp, Burnin.
+d9 3
+a11 2
+centers.  Catalog Agility Project: Primary architect on crawler
+scalability and data storage changes.
+d13 7
+a19 6
+Crawler Team: Catalog Master: Built and extended cluster management
+and monitoring software for managing thousands of nodes.  Many
+projects ranging from investigating problems based on statistical
+anomolies in freshness, comprehensiveness, and quality to writing disk
+burnin software used by all of YST (Yahoo Search Technology).  Wrote
+CTA (Cluster Trends Analyzer) and CluStats (Cluster Stats) packages.
+d21 5
+a25 5
+Echelon Team: Echelon Master: worked on cluster management software
+for controlling indexing pipeline and batch processing.  Echelon
+Copier (EchCp): cross-coast database distribution software with
+extensive performance throttling controls for delivery production
+index data to other groups.
+a26 2
+At Yahoo 6 years, 4 managers, 3 teams, 5 cluster doublings, thousands
+of nodes per cluster.
+@

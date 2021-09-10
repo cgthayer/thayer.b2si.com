@@ -1,0 +1,83 @@
+Concepts:
+---------
+markov chain
+
+priority queue / bin heap
+
+semaphores
+
+producer consumer
+
+clustering
+
+triples
+
+distant
+
+spanning tree
+
+trie
+
+permute complete / unique
+
+probability state machine
+
+dijkstra algo
+
+cycles detection / garbage collection
+
+bayesian inference (spam email)
+
+precision vs recall
+
+compression (lzw)
+
+hash functions
+
+generating random numbers
+
+normal (gaussian) distribution
+  central limit theorem
+  * sum of lots of random (iid) variables is a normal distribution
+  law of large numbers
+  outliers (strong and weak)
+  std dev (iqr inter-quartrile-range)
+  * 68% are 1 stddev from mean, 95% are 2 stddev, 99.7 are 3
+
+
+expectation
+
+sorting performance
+  quicksort
+  mergesort
+  bubble sort
+  
+datastructure performance
+
+
+Classic Problems:
+-----------------
+
+dining philosophers
+
+7 bridges
+
+monty hall
+
+
+Modern DS / Algos:
+------------------
+
+consistent hash
+
+bloom filter
+
+
+
+Scalability:
+------------
+
+sharding
+
+large sort
+

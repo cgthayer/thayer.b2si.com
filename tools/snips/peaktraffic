@@ -1,0 +1,100 @@
+#!/usr/bin/python
+import sys, os, string
+
+Debug=0
+
+def debug(*args):
+    global Debug
+    if Debug > 0:
+        print args
+
+def readGraph(filename, nodes):
+    digraph = {}
+    f = open(filename, "r")
+    if f == False:
+        exit(-1)  
+    debug(f)
+    for line in f:
+        line = line.rstrip('\n')
+        if len(line) == 0:
+            continue
+        parts = line.split('\t')
+        debug("parts", parts)
+        # assert len(parts) == 3
+        src = parts[1]
+        dst = parts[2]
+        debug("src=", src, "dst=", dst)
+        digraph[src + "," + dst] = 1
+        dictIncr(nodes, src)
+        dictIncr(nodes, dst)
+    # endwhile
+    f.close()
+    return digraph
+
+def dictIncr(a, k):
+    if k in a:
+        a[k] += 1
+    else:
+        a[k] = 1
+
+
+def buildcluster(digraph, clusters, nodes):
+    for n in nodes:
+        debug("check node", n)
+        added = False
+        for cn in clusters.keys():
+            debug("  checking cluster", cn)
+            if highlyConnected(digraph, clusters[cn], n):
+                debug("  adding", n, "to", cn)
+                clusters[cn].append(n)
+                added = True
+                # break
+            # if
+        # for cn
+        if not added:
+            debug("  * new cluster for", n)
+            clusters[n] = [n]
+        # if
+    # for
+    return len(clusters)
+
+
+def highlyConnected(digraph, cnodes, node):
+    for cn in cnodes:
+        if not isHighlyConnected(cn, node, digraph):
+            return False
+    return True
+
+def isHighlyConnected(a, b, g):
+    if (a + "," + b) in g \
+            and (b + "," + a) in g:
+        return True
+    else:
+        return False
+
+def emitClusters(c):
+    nc = {}
+    for k, nl in c.items():
+        if len(nl) < 3:
+            continue
+        nl.sort()
+        nk = ", ".join(nl)
+        nc[nk] = 1
+    nck = sorted(nc.keys())
+    for k in nck:
+        print k
+
+def main():
+    fn = sys.argv[1]
+    debug("file=" + fn)
+    nodes = {}  # hash(node) -> count
+    digraph = readGraph(fn, nodes)
+    debug("digraph=", digraph)
+    debug("nodes=", nodes)
+    clusters = {}  # hash(node) -> [n, ...]
+    buildcluster(digraph, clusters, nodes)
+    debug("clusters=", clusters)
+    emitClusters(clusters)
+
+if __name__ == '__main__':    
+    main()

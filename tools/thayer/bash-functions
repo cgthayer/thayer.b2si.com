@@ -1,0 +1,704 @@
+warn "[Running functions"
+
+export FPATH=~/functions
+
+whatis ()
+{
+  local fail=0
+
+  if [ $# -eq 0 ] ; then
+    echo 'usage: whatis arg [arg...]'
+    return 1
+  fi
+
+  for arg; do
+    case $(builtin type -type $arg 2>/dev/null) in
+      "alias")
+        builtin alias "$arg"
+        ;;
+      "function")
+        builtin type "$arg" | sed 1d
+        ;;
+      "builtin")
+        echo builtin "$arg"
+        ;;
+      "file")
+        builtin type -path "$arg"
+        ;;
+      *)
+        # OK, we could have a variable, or we could have nada.
+        if [ "$(eval echo \${$arg+set})" = "set" ] ; then
+          # It is a variable, and it is set.
+          echo -n "$arg="
+          eval echo '\"'\$$arg'\"'
+        else
+          echo whatis: $arg: not found
+          fail=1
+        fi
+        ;;
+      esac
+    done
+  return $fail
+}
+
+
+#getreply () 
+#{ 
+#    display=$1;
+#    message=$2;
+#    buttons=${3:-ok};
+#    xmessage -display ${display}:0 -print $message -button $buttons \
+#	| xargs xmessage "$display: $message: " 
+#}
+
+# Find out who is locking which RCS files 
+rcswho()
+{
+  export f
+  for f in $(rlog -L -R RCS/*,v); do
+    rlog -L $f | 
+	perl -ne '
+		BEGIN { ($short) = $ENV{f} =~ m!([^/]+),v!; }
+		print "$short\t$1\n" if (/locked by: ([^;]+);/);
+	'
+  done
+}
+
+rcswho2()
+{
+  perl -MFile::Find -e '
+     find(sub { push(@f, $File::Find::name) if /,v$/; }, @ARGV);
+     $/ = ";";
+     foreach $file (@f) {
+       if (open(F, $file)) {
+         while (<F>) {
+           if (/locks\s+(\S+);/ && $1) { print "$file\t$1\n"; last; }
+         }
+         close(F);
+       } else {
+	 warn "Could not read $file";
+       }
+     }
+   ' $*
+}
+
+rdiff() 
+{
+  date=$1
+  file=$2
+  co -p  -d"$date" $file | diff - $file
+}
+
+diff-src()
+{
+   orig=$1
+   mods=$2
+   LC_ALL=C TZ=UTC0 diff -ur $orig $mods | \
+	egrep -v  '^Only in ' > $HOME/public_html/patches/$mods.patch
+}
+
+# Edit with lock
+el ()
+{ 
+	files=""
+	for file in $*; do
+		if [ -h $file ]; then 
+			echo Link dropped: $file >&2
+		else
+			files="$files $file"
+		fi
+	done
+	set $files
+			
+	(
+	ci -u $*
+	rcsdiff $* && 
+	co -l $* &&
+	edit $* && 
+	ci -u -m'routine' $* 
+	)
+}
+
+work () {
+	(
+	cd
+	set TODO*
+	ci -u $*
+	rcsdiff $* && 
+	co -l $* &&
+	emacs -nw $* -f mh-rmail && 
+	ci -u -m'routine' $* 
+	)
+}
+alias play=work
+
+# Take the lock and get the file
+grablock ()
+{
+	( 
+	rcs -u $* &&
+	rcs -l $* &&
+	ci -u -m'grabbed lock' $*
+	)
+}
+
+term()
+{
+	trap "set +f" 0; set -f; eval `tset -r -sQ ${1:-$TERM}`
+}
+
+#function trsh
+#{
+#	if [ .$1 = '.' ]; then
+#		print - *~* .*~* \#* temp.* *.dvi *.ln* *.log core 
+#	else
+#		print -  $1/*~* $1/.*~* $1/\#* $1/temp.* $1/*.dvi $1/*.ln* $1/*.log core 
+#	fi
+#}
+
+cln()
+{
+  if [ .$1 = '.' ]; then set .; fi
+  for dir in $*; do 
+    if [ -d $dir ]; then
+      ( cd $dir; /bin/rm -f *~* .*~* \#* temp.* *.dvi *.ln* core )
+    fi
+  done
+}
+
+
+m()
+{
+  for i in $*; do 
+    { case $i in *.gz) zcat $i;; *) cat $i;; esac; } \
+      | nroff -man | $PAGER;
+  done
+}
+
+math()
+{
+	python -c "print $*"
+}
+
+xtitle() {
+  if [ $TERM = 'xterm' ]; then echo "]2;$*"; fi
+}
+
+if [ ! -x `which zgrep` ]; then 
+  zgrep() {
+    re=$1
+    shift
+    zcat $* | grep $re
+  }
+fi
+
+makelog()
+{
+  v=all
+  for arg in $*; do
+    case $arg in
+      -*) ;;  # skip the options like "-n"
+      *) v=$arg; break;;
+    esac
+  done
+  
+  log=make-$v.log
+  if [ -f $log ]; then
+     rm $log 
+     echo deleted old $log..
+  fi
+  echo "Making (make $*) logging to $log.."
+  make $* 2>&1 | tee $log
+}
+
+log()
+{
+  cmd=$1
+  arg=$2
+  [ $arg -a $arg == ${arg##*-} ] && file="$cmd-$arg.log" || file="$cmd.log"
+  : > $file
+  echo "$(date +'%Y-%m-%d %H:%M:%S')  Starting: $*" >> $file
+  local stime=$(date +%s)
+  eval $* 2>&1 | tee -a $file
+  echo "$(date +'%Y-%m-%d %H:%M:%S')  Took: $(($(date +%s) - $stime)) secs" \
+    >> $file
+}
+
+case `uname -sr` in
+HP*|"SunOS 5"*)
+  export PS_CMD="ps -efj"
+  ;;
+Linux*)
+  export PS_CMD="ps afx -o pid,ppid,pgid,user,tty,stat,rss,cputime,command"
+  ;;
+*) 
+  export PS_CMD="ps -auxww"
+  ;;
+esac
+
+psx() { $PS_CMD; }
+psg() { ps faxo pid,ppid,pgid,stat,stime,command; }
+
+getpid() {
+  $PS_CMD | perl -ne "print if (\$. == 1 || m/$@/i && ! m/\\b\$\$\\b/)"
+}
+
+iox() { 
+  iostat -x 5 | perl -ane 'print "$F[0]\t$F[11]\t$F[13]\n" if ($F[0] !~ /\d$/)'
+}
+
+# fast find
+function ff {
+  find . -type f | egrep $*
+}
+
+function lsd {
+  perl -ne 'chomp; print "$_\n" if -d'
+}
+
+function validatepath {
+  perl -e '$|++;
+    foreach $c (split(/:/, $ENV{PATH})) {
+      if ( -x $c ) {
+        if (!$seen{$c}) {
+          print STDERR " +$c";
+          push(@path, $c);
+          $seen{$c}++;
+        } else {
+          print STDERR " ~$c";
+        }
+      } else {
+	print STDERR " -$c"
+      }
+    }
+    print STDERR "\n";
+    $path = join(":", @path);
+    print "PATH=$path\n";
+    $path =~ s@/bin@/man@g;
+    foreach $m (split(/\n/, `locate man/whatis`)) {
+	$m =~ s@/whatis@@;
+	$path .= ":$m";
+    }
+    print "MANPATH=$path\n";
+  '
+}
+
+#function cvsrm {
+#  for f in $*; do
+#    rm -i $f && cvs delete $f
+#  done
+#}
+
+function scun {
+  scan unseen $*
+}
+
+function scel {
+  scan select $*
+}
+
+function scuna {
+  if perl -MPOSIX -e 'exit(!isatty(STDOUT))'; then p=$PAGER; else p=cat; fi
+  (for f in  $(folders -fast -rec); do 
+	scan unseen +$f 2> /tmp/scuna.$$.e > /tmp/scuna.$$ 
+	if [ ! -s /tmp/scuna.$$.e ]; then 
+	  echo $f:
+	  cat /tmp/scuna.$$
+	fi
+  done) | $p
+  folder +inbox > /dev/null	# force me to the inbox folder when done
+  rm /tmp/scuna.$$ /tmp/scuna.$$.e
+}
+
+# takes a string to execute for each email folder
+# eg. forfolders scun +\$f
+function forfolders {
+  if perl -MPOSIX -e 'exit(!isatty(STDOUT))'; then p=$PAGER; else p=cat; fi
+  (
+    for f in  $(folders -fast); do 
+	folder=$f
+	echo $f
+  	eval $*
+    done
+  ) | $p
+}
+
+# scan recent
+function scanr {
+  num=$1;
+  if [ -z $num ]; then num=10; fi
+  for f in $(folders -fast); do
+    echo $f:
+    scan last:-$num +$f 2> /dev/null
+  done
+}
+
+tel () 
+{ 
+    cmd=$(perl -e 'print map(" | grep -i $_", @ARGV), "\n"' $*);
+    cmd="cat ~/.tel $cmd | perl -pe 's/\\\\n/\n/g'";
+    echo "[$cmd]"
+    eval $cmd
+}
+
+function teu {
+  ( echo "$*" | perl -pe 's/\n/\\n/g'; echo ) >> ~/.tel
+}
+
+function card {
+  ( ( echo --; cat -; echo -- ) | perl -pe 's/\n/\\n/g'; echo "" ) >> ~/.tel
+}
+
+function root {
+  fu -u rthayer || su rthayer
+}
+
+function prefix {
+  perl -e '$|++; while (<STDIN>) { print "$ARGV[0]$_"; }' "$@";
+}
+
+function dateprefix {
+  perl -MPOSIX -ne 'print strftime("%Y/%m/%d %H:%M:%S", localtime()), ": $_";'
+}
+
+function datestamp { date +%Y%m%d-%H%M%S; }
+
+# shell quoter
+function shq {
+  perl -pe  "chomp; s/(['=\" ])/\\\\\\1/g; \$_ = \"\\\"\$_\\\"\\n\""
+}
+
+
+basename() {
+  for f in $*; do echo -n "${f##*/} "; done; echo;
+}
+
+dirname() {
+  for f in $*; do echo -n "${f%/*} "; done; echo;
+}
+
+# sec2date () 
+# { 
+#     for i in $*;
+#     do
+#         perl -e "print scalar(localtime($i)), \"\\n\"";
+#     done
+# }
+
+functions() {
+  declare -F | perl -pe "s/declare -f //"
+  # set | perl -ne 'print "$1\n" if /(.*)=\(\)/'
+  # set | fgrep '=()'  | awk -F= '{print $1}'
+  #    declare -f | egrep '^declare' | \
+  #	( while read f; do b=${f#declare -f}; echo $b; done)
+}
+
+# just one line from the top and bottom
+j1() {
+  for f in $*; do
+    case $f in
+      *.gz) zcat $f | head -1;
+	    zcat $f | tail -1;
+	  ;;
+      *) head -1 $f;
+	 tail -1 $f;
+       ;;
+    esac
+  done
+}
+
+bak() {
+  for i in "$@"; do mv "$i" "${i%/}-"; done
+}
+
+fow() {
+  for i in "$@"; do mv "$i" "$i+"; done
+}
+
+mhcatchup() {
+  for i in $*; do 
+    mark all -delete -sequence unseen +$i
+  done
+}
+
+sp() {
+  dir=${*:-.}
+  for d in $dir; do 
+     echo Summarizing $d
+     du -x $d --exclude=.snapshot | sort -nr > $d/.sp
+     head -10 $d/.sp
+  done
+}
+
+fsfp () 
+{
+    find ${1:-.} -type f | xargs md5sum
+}
+
+hgrep() {
+  pattern=""
+  cs=""              # case sensitive
+
+  for arg in "$@"; do 
+     if [ "$arg" == "-i" ]; then cs="-I"; fi
+     case "$arg" in
+       -*);;
+       *) pattern="$arg"; break;;  # get first non "-opt" arg
+     esac
+  done
+
+  grep "$@" | less -p"$pattern" $cs
+}
+
+rot13() {
+  perl -pe 'tr/a-mn-zA-MN-Z/n-za-mN-ZA-M/;'
+}
+
+lastpid() {
+   export LASTPID=`jobs -p | tail -1 `
+}
+
+# get, untar, configure, make.  Looks for PREFIX, defaults to /usr/local
+ucm() {
+  # untar, if there's an argument
+  if [ -n "$1" ]; then
+    case $1 in
+    *://*) wget $1 && ucm ${1##*/}; return 0;;    # get urls
+    *.gz|*.tgz) unpack="gunzip -c";;
+    *.bz*) unpack="bunzip2 -c";;
+    *) unpack="cat";;
+    esac
+    bn=${1%.tar*} # basename
+    bn=${1%.tgz}
+    bn=${bn##*/}
+    if [ ! -d $bn ]; then 
+      dir=$($unpack $1 | tar tvf - | perl -ne 'm!(\S+)/$! && print "$1\n"; last;')
+      if "$bn" != "$dir"; then 
+        echo "Argument \"$1\" ($bn) doesn't match archive \"$dir\""
+        return
+      else
+        if ! $unpack $1 | tar xvf -; then return; fi
+      fi # bn == dir
+    fi # -d $bn
+    if ! pushd $bn; then return; fi
+    echo Current Directory $(pwd)
+  fi # -n $1
+
+  # should be in the right directory by now
+  if [ ! -e config.status ]; then 
+    if ! ./configure --prefix=${PREFIX:-/usr/local}; then return; fi
+  fi
+
+  # build it
+  makelog && makelog install
+}
+
+readme_files() {
+  r="README ReadMe Readme readme INSTALL Install install"
+  list=""
+  for fn in $r; do
+    for ext in "" .txt; do
+      for dir in "" doc/; do 
+        file=$dir$fn$ext
+        if [ -f "$file" ]; then 
+          list="$list $file"
+        fi
+      done
+    done
+  done
+  if [ "$list" ]; then echo $list; fi
+}
+
+readme() {
+    more $(readme_files)
+}
+
+linenumber() {
+    perl -ne 'printf "%3d: %s", $., $_'
+}
+
+netstate() { # netstat extended
+    netstat -an | \
+	perl -ne 'if (/(TIME|FIN|ESTAB|SYN|CLO)\S*/) { 
+		$s = $&; $h{$s}++;
+        } 
+	END { print map { "$_ = $h{$_}\n" } keys(%h); }'
+}
+
+mon() { # rerun the command every so often
+  while true; do 
+    clear
+    echo $*
+    eval "$@"
+    sleep 5
+  done
+}
+
+blksize() {
+  # block size of . or $1
+  perl -e '@s = stat($ARGV[0] || "."); print "$s[11]\n";' $*
+}
+
+
+trash() {
+  for f in $*; do
+    f=${f%%/}  # drop trailing slash for dirs
+    mv $f trash-$f
+    rm -rf trash-$f &
+  done
+}
+
+prange() { 
+  perl -e 'for $f ($ARGV[0]..$ARGV[1]) { print "$f\n"; }' $*
+}
+
+# perl kill
+pill() { 
+  perl -e "exit(kill(15, -$1)==0)"
+}
+
+alive() {
+  perl -e "exit(kill(0, $1)==0)"
+}
+
+apush() {
+    # apush <array-name> <value>
+    eval "$1[\${#$1[@]}]=\$2"
+}
+
+apop ()
+{
+    # apop <array-name> => <value>
+    an=$1;
+    eval "local i=\$((\${#$an[@]}-1))";
+    eval "local r=\${$an[$i]}";
+    eval "unset $an[$i]";
+    echo $r
+}
+
+explain ()
+{
+  for f in "$@"; do echo $f; done
+}
+
+# like "sort | uniq -c"
+counter()
+{
+  perl -ne 'chomp; $h{$_}++; END { print map("$h{$_} $_\n", sort keys %h); }'
+}
+
+# unix time in secs to date
+dateunix()
+{
+	perl -MPOSIX -e 'print strftime("%c\n", localtime($ARGV[0]))' $*
+}
+
+function datepipe {
+  perl -MPOSIX -ne 'print strftime("%Y/%m/%d %H:%M:%S", localtime()), ": $_";'
+}
+
+reverse()
+{
+	perl -ne 'push(@lines, $_); END { print reverse @lines; }'
+}
+
+commas()
+{
+	perl -pe 'while (s/(\d)(\d\d\d\b)/\1,\2/g) { } '
+}
+
+tracepid ()
+{
+    p=$1;
+    e=$2;
+    x=/tmp/gdb$pid.x;
+    printf "attach $p\nwhere\ndetach" >$x;
+    gdb-deb $e -x $x -batch;
+    rm $x
+}
+
+callstats ()
+{
+    grep '<<<' | cut -f2,6 -d\ | \
+        perl -ane '$h{$F[1]} += $F[0]; $c{$F[1]}++; 
+	           END { print map(sprintf("%10.2f %7d $_\n", $h{$_}, $c{$_}), keys %h); }' | sort -nr
+}
+
+runbg() 
+{ 
+  (echo "$*" > .running.$$; eval "$@"; rm .running.$$) &  
+}
+
+
+# Runs find while skipping the .svn directories.  If run without args
+# it finds all files.  If given args, they should be args for find.
+#
+findsvn () 
+{ 
+    [ "$*" ] || set -- -type f;
+    find . -name .svn -a -prune -o \( "$@" -a -print \)
+}
+
+# use an array as a stack
+#
+push()
+{
+  var=$1
+  shift
+  eval "$var=(\${$var[@]} \"\$@\")"
+}
+
+pop()
+{
+  var=$1
+  eval "end=\${#$var[@]}"
+  eval "echo \${$var[$end-1]}"
+  eval "unset $var[$end-1]"
+}
+
+sleepdots()
+{
+    local t=$1;
+    local ticks=20;
+    local last=0
+    [ $t -lt 20 ] && ticks=$t; 
+    for ((i=0; i < $ticks; i++))
+    do
+        echo -n .;
+	local cur=$[ ($i+1) * $t / $ticks ];
+	local interval=$[$cur-$last]
+        sleep $interval
+	last=$cur
+    done
+    echo
+}
+
+become()
+{
+    local user=$1
+    shift
+    sudo -u $user ${@:-bash}
+}
+
+stddev()
+{
+    perl -ane '
+	$x = $F[0]; 
+	$sum += $x; 
+	$sumsq+= $x*$x;
+	END { 
+	  print "num=$., sum=$sum, sumsq=$sumsq, mean=",
+	      $sum/$., ", stddev=", 
+	      sqrt(($sumsq/$.) - ($sum/$.)*($sum/$.)), "\n"; 
+	}
+	'
+}
+
+ccmindent()
+{
+    # takes ccm input and tries to nesting identing properly
+    perl -pe 's/([{},])/$1\n/g' \
+	| perl -pe 'print $d; $d.="  " if (m/{/); substr($d,-2) = "" if (m/}/)'
+}
+
+warn "]\n"

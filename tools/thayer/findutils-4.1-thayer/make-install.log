@@ -1,0 +1,90 @@
+for subdir in lib find xargs locate doc testsuite; do \
+  echo making install in $subdir ; \
+  (cd $subdir; make install); \
+done
+making install in lib
+make[1]: Entering directory `/space/home/thayer/src/findutils-4.1/lib'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/space/home/thayer/src/findutils-4.1/lib'
+making install in find
+make[1]: Entering directory `/space/home/thayer/src/findutils-4.1/find'
+../mkinstalldirs /usr/local/bin
+for p in find ; do \
+  .././install-sh -c $p /usr/local/bin/`echo $p|sed 's,x,x,'`; \
+done
+for man in find.1; do \
+  sect=`echo $man|sed 's%.*\.\([0-9][a-z]*\)$%\1%'`; \
+  inst=`basename $man $sect|sed 's,x,x,'`$sect; \
+  mdir=/usr/local/man/man$sect; \
+  ../mkinstalldirs $mdir; \
+  echo installing $man as $mdir/$inst; \
+  .././install-sh -c -m 644 ./$man $mdir/$inst; \
+  cdir=/usr/local/man/cat$sect; \
+  if test -d $cdir; then \
+    echo formatting $man as $cdir/$inst; \
+    nroff -man ./$man > $cdir/$inst; \
+  fi; \
+done
+installing find.1 as /usr/local/man/man1/find.1
+make[1]: Leaving directory `/space/home/thayer/src/findutils-4.1/find'
+making install in xargs
+make[1]: Entering directory `/space/home/thayer/src/findutils-4.1/xargs'
+../mkinstalldirs /usr/local/bin
+for p in xargs ; do \
+  .././install-sh -c $p /usr/local/bin/`echo $p|sed 's,x,x,'`; \
+done
+for man in xargs.1; do \
+  sect=`echo $man|sed 's%.*\.\([0-9][a-z]*\)$%\1%'`; \
+  inst=`basename $man $sect|sed 's,x,x,'`$sect; \
+  mdir=/usr/local/man/man$sect; \
+  ../mkinstalldirs $mdir; \
+  echo installing $man as $mdir/$inst; \
+  .././install-sh -c -m 644 ./$man $mdir/$inst; \
+  cdir=/usr/local/man/cat$sect; \
+  if test -d $cdir; then \
+    echo formatting $man as $cdir/$inst; \
+    nroff -man ./$man > $cdir/$inst; \
+  fi; \
+done
+installing xargs.1 as /usr/local/man/man1/xargs.1
+make[1]: Leaving directory `/space/home/thayer/src/findutils-4.1/xargs'
+making install in locate
+make[1]: Entering directory `/space/home/thayer/src/findutils-4.1/locate'
+../mkinstalldirs /usr/local/bin
+for p in locate updatedb; do \
+  .././install-sh -c $p /usr/local/bin/`echo $p|sed 's,x,x,'`; \
+done
+../mkinstalldirs /usr/local/libexec
+for p in frcode code bigram ; do \
+  .././install-sh -c $p /usr/local/libexec/`echo $p|sed 's,x,x,'`; \
+done
+for man in locate.1 updatedb.1 locatedb.5; do \
+  sect=`echo $man|sed 's%.*\.\([0-9][a-z]*\)$%\1%'`; \
+  inst=`basename $man $sect|sed 's,x,x,'`$sect; \
+  mdir=/usr/local/man/man$sect; \
+  ../mkinstalldirs $mdir; \
+  echo installing $man as $mdir/$inst; \
+  .././install-sh -c -m 644 ./$man $mdir/$inst; \
+  cdir=/usr/local/man/cat$sect; \
+  if test -d $cdir; then \
+    echo formatting $man as $cdir/$inst; \
+    nroff -man ./$man > $cdir/$inst; \
+  fi; \
+done
+installing locate.1 as /usr/local/man/man1/locate.1
+installing updatedb.1 as /usr/local/man/man1/updatedb.1
+installing locatedb.5 as /usr/local/man/man5/locatedb.5
+../mkinstalldirs /usr/local/var
+mkdir /usr/local/var
+make[1]: Leaving directory `/space/home/thayer/src/findutils-4.1/locate'
+making install in doc
+make[1]: Entering directory `/space/home/thayer/src/findutils-4.1/doc'
+../mkinstalldirs /usr/local/info
+cd .; for file in *.info*; do \
+  .././install-sh -c -m 644 $file /usr/local/info/$file; \
+done
+make[1]: Leaving directory `/space/home/thayer/src/findutils-4.1/doc'
+making install in testsuite
+make[1]: Entering directory `/space/home/thayer/src/findutils-4.1/testsuite'
+make[1]: Nothing to be done for `install'.
+make[1]: Leaving directory `/space/home/thayer/src/findutils-4.1/testsuite'

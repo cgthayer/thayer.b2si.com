@@ -1,0 +1,26 @@
+
+Worked on web search content systems for 7 years, with 4 managers, on
+3 teams, during 5 cluster doublings, with thousands of nodes per
+cluster.  Mainly worked on cluster management and monitoring software
+(C++) and the operation of the production web crawlers.
+
+Content Operations Team: Managed the deployment, operations, and
+monitoring of production web crawler clusters in distributed data
+centers.  Typical projects included moving 1.8 PB across coasts.
+Catalog Agility Project: Primary architect on crawler scalability and
+data storage changes (C++).
+
+Crawler Team: Catalog Master: Built and extended cluster
+management and monitoring software for managing thousands of nodes
+(C++).  Many projects ranging from investigating problems based on
+statistical anomolies in freshness, comprehensiveness, and quality
+(Python) to writing disk burnin software (C) used by all of YST (Yahoo
+Search Technology).  Wrote CTA package (Cluster Trends Analyzer) in
+Python and CluStats (Cluster Stats and alerts) libraries in C++.
+
+Echelon Team: Echelon Master: worked on cluster management
+software for controlling indexing pipeline and batch processing (C++).
+Echelon Copier (EchCp in C &amp; C++): cross-coast database distribution
+software with extensive performance throttling controls for delivery
+production index data to other groups.
+

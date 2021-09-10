@@ -1,0 +1,78 @@
+<html>
+  <head>
+  <title>KLVN XL8R</title>
+  </head>
+  <body>
+  <form>
+    <p>
+      <textarea id="input" name="input" rows="20" cols="80">Raider Klan Input Text</textarea>
+    </p>
+    <p>
+      <button type="button">Translate</button>
+    </p>
+    <p>
+      <textarea id="output" name="output" rows="20" cols="80"></textarea>
+    </p>
+  </form>
+  </body>
+
+  <script>
+
+    function sendData(data) {
+      console.log(data);
+      const input = document.getElementById('input');
+      const output = document.getElementById('output');
+      console.log(input);
+      console.log(output);
+      const result = translate(input.value);
+      console.log(result);
+      output.value = result;
+      textToClipboard(result);
+      
+    }
+
+function textToClipboard (text) {
+    var dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+}
+
+
+const xforms = [
+  ['a', '∀'],
+  ['e', 'XX'],
+  ['o', 'X'],
+  ['u', 'X'],
+  ['u', 'V'],
+  ['s', 'Z'],
+];
+
+function translate(instr) {
+  if (instr === null || instr == '') {
+    return '';
+  }
+  var result = instr;
+  for (t in xforms) {
+    const parts = result.split(xforms[t][0]);
+    if (parts.length > 1) {
+      var outs = [];
+      for (p in parts) {
+        outs.push(translate(parts[p]));
+      }
+      result = outs.join(xforms[t][1]);
+    }
+  }
+  return result;
+}
+  
+
+    const btn = document.querySelector('button');
+    btn.addEventListener( 'click', function()
+      { sendData( {test:'ok'} );
+    } )
+
+  </script>
+</html>

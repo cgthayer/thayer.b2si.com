@@ -1,0 +1,68 @@
+for subdir in lib find xargs locate doc testsuite; do \
+  echo making all in $subdir ; \
+  (cd $subdir; make all); \
+done
+making all in lib
+make[1]: Entering directory `/space/home/thayer/src/findutils-4.1-thayer/lib'
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O regex.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O dirname.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O error.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O filemode.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O getopt.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O getopt1.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O idcache.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O listfile.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O modechange.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O nextelem.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O savedir.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O xmalloc.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O getline.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O xstrdup.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O xgetcwd.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O fnmatch.c
+gcc -c -DHAVE_CONFIG_H -I.. -I.  -g -O stpcpy.c
+rm -f libfind.a
+ar cru libfind.a regex.o dirname.o error.o filemode.o getopt.o getopt1.o idcache.o listfile.o modechange.o nextelem.o savedir.o xmalloc.o getline.o xstrdup.o xgetcwd.o fnmatch.o   stpcpy.o 
+ranlib libfind.a
+make[1]: Leaving directory `/space/home/thayer/src/findutils-4.1-thayer/lib'
+making all in find
+make[1]: Entering directory `/space/home/thayer/src/findutils-4.1-thayer/find'
+gcc -c -DHAVE_CONFIG_H -I.. -I../lib  -g -O find.c
+find.c: In function `main':
+find.c:136: warning: return type of `main' is not `int'
+gcc -c -DHAVE_CONFIG_H -I.. -I../lib  -g -O fstype.c
+gcc -c -DHAVE_CONFIG_H -I.. -I../lib  -g -O parser.c
+gcc -c -DHAVE_CONFIG_H -I.. -I../lib  -g -O pred.c
+gcc -c -DHAVE_CONFIG_H -I.. -I../lib  -g -O tree.c
+gcc -c -DHAVE_CONFIG_H -I.. -I../lib  -g -O util.c
+gcc -c -DHAVE_CONFIG_H -I.. -I../lib  -g -O version.c
+gcc -o find find.o fstype.o parser.o pred.o tree.o util.o version.o ../lib/libfind.a  -lintl
+make[1]: Leaving directory `/space/home/thayer/src/findutils-4.1-thayer/find'
+making all in xargs
+make[1]: Entering directory `/space/home/thayer/src/findutils-4.1-thayer/xargs'
+gcc -c -DHAVE_CONFIG_H -I.. -I../lib  -g -O xargs.c
+xargs.c: In function `main':
+xargs.c:253: warning: return type of `main' is not `int'
+gcc -o xargs xargs.o ../find/version.o ../lib/libfind.a  -lintl
+make[1]: Leaving directory `/space/home/thayer/src/findutils-4.1-thayer/xargs'
+making all in locate
+make[1]: Entering directory `/space/home/thayer/src/findutils-4.1-thayer/locate'
+gcc -c -DHAVE_CONFIG_H -I.. -I../lib -DLOCATE_DB=\"/usr/local/var/locatedb\"  -g -O locate.c
+locate.c: In function `main':
+locate.c:379: warning: return type of `main' is not `int'
+gcc -o locate locate.o ../find/version.o ../lib/libfind.a  -lintl
+Undefined			first referenced
+ symbol  			    in file
+char_case_cmp                       locate.o
+ld: fatal: Symbol referencing errors. No output written to locate
+collect2: ld returned 1 exit status
+make[1]: *** [locate] Error 1
+make[1]: Leaving directory `/space/home/thayer/src/findutils-4.1-thayer/locate'
+making all in doc
+make[1]: Entering directory `/space/home/thayer/src/findutils-4.1-thayer/doc'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/space/home/thayer/src/findutils-4.1-thayer/doc'
+making all in testsuite
+make[1]: Entering directory `/space/home/thayer/src/findutils-4.1-thayer/testsuite'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/space/home/thayer/src/findutils-4.1-thayer/testsuite'

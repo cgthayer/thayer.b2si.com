@@ -1,0 +1,148 @@
+﻿# -*- coding: utf-8 -*-
+"""
+    MoinMoin technical theme
+
+    @copyright: (c) 2003-2004 by Nir Soffer
+    @license: GNU GPL, see COPYING for details.
+
+    As modified by Heather Stern for Ubuntu
+"""
+
+from MoinMoin.theme import modern, wikiutil
+from MoinMoin.Page import Page
+
+class Theme(modern.Theme):
+
+    name = "hexagonal"
+
+    def title(self, d):
+        """ Assemble the title (now using breadcrumbs)
+        
+        @param d: parameter dictionary
+        @rtype: string
+        @return: title html
+        """
+        _ = self.request.getText
+        content = []
+        if d['title_link']:
+            # having a link means we have a (linked) pagename 
+            # ONLY as title, not a message title
+            # XXX this method is rather ugly and should be improved
+
+            curpage = ''
+            segments = d['page_name'].split('/') # was: title_text
+            for s in segments[:-1]:
+                curpage += s
+                content.append("<li>%s</li>" % Page(self.request, curpage).link_to(self.request, s))
+                curpage += '/'
+            content.append(('<li><a class="backlink" title="%(title)s" href="%(href)s">%(text)s</a></li>') % {
+                'title': _('Click to do a full-text search for this title'),
+                'href': d['title_link'],
+                'text': wikiutil.escape(segments[-1]),
+                })
+        else:
+            content.append('<li>%s</li>' % wikiutil.escape(d['title_text']))
+
+        html = '''
+<ul id="pagelocation">
+%s
+</ul>
+''' % "".join(content)
+        return html
+
+
+    def header(self, d, **kw):
+        """ Assemble wiki header
+        
+        @param d: parameter dictionary
+        @rtype: unicode
+        @return: page header html
+        """
+        html = [
+            # Pre header custom html
+            self.emit_custom_html(self.cfg.page_header1),
+            
+            # Header
+            u'<div id="header">',
+            self.logo(),
+            self.searchform(d),
+            self.username(d),
+            u'<div id="locationline">',
+            self.interwiki(d),
+            self.title(d),
+            u'</div>',
+            u'<ul id="pagetrail">Hist:',
+              self.trailBody(d),
+            u'</ul>\n',
+            self.navibar(d),
+            #u'<hr id="pageline">',
+            u'<div id="pageline"><hr style="display:none;"></div>',
+            self.msg(d),
+            #self.editbar(d),
+            u'</div>',
+            
+            # Post header custom html (not recommended)
+            self.emit_custom_html(self.cfg.page_header2),
+            
+            # Start of page
+            self.startPage(),
+        ]
+        return u'\n'.join(html)
+
+    def trail(self, d):
+        html = '''
+<ul id="pagetrail">
+%s
+</ul>''' % trailBody(d)
+        return html
+        
+    def trailBody(self, d):
+        """ Assemble page trail
+        
+        @param d: parameter dictionary
+        @rtype: unicode
+        @return: trail html
+        """
+        request = self.request
+        user = request.user
+        html = ''
+        if user.valid and user.show_page_trail:
+            trail = user.getTrail()
+            if trail:
+                items = []
+                for pagename in trail:
+                    try:
+                        interwiki, page = pagename.split(":", 1)
+                        # Items in trail are saved as valid interwiki
+                        # links, using _ for spaces.
+                        page = page.replace('_', ' ')
+                        if request.cfg.interwikiname != interwiki:
+                            link = (self.request.formatter.interwikilink(True, interwiki, page) +
+                                    self.shortenPagename(page) +
+                                    self.request.formatter.interwikilink(False, interwiki, page))
+                            items.append('<li>%s</li>' % link)
+                            continue
+                        else:
+                            pagename = page
+                            
+                    except ValueError:
+                        pass
+                    page = Page(request, pagename)
+                    title = page.split_title(request)
+                    title = self.shortenPagename(title)
+                    link = page.link_to(request, title)
+                    items.append('<li>%s</li>' % link)
+                # endfor
+                html = ''.join(items)
+            # endif
+        return html
+
+def execute(request):
+    """ Generate and return a theme object
+        
+    @param request: the request object
+    @rtype: Theme instance
+    @return: Theme object
+    """
+    return Theme(request)
+

@@ -1,0 +1,22 @@
+
+Summary [ Edit ]
+
+Building technology-focused companies. Large-scale network systems.
+Specialties:
+
+Start-ups, Large-scale Software Engineering, Internet Technology
+
+Linux cluster kung-fu
+
+* Content Operations: Managing automation of cluster management and
+  deployment of production clusters and software.  Architecting and
+  design new data-store for crawler clusters.
+
+* Crawler Team: Built cluster statistics, alerting, and management
+  libraries (C++).  Production operation respsonsibilities.
+
+* Indexing Team: Worked on Echelon, the cluster management software
+  for batch index builds.  Wrote echcp for large database copy and
+  deployment.
+
+

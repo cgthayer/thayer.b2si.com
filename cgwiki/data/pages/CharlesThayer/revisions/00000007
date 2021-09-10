@@ -1,0 +1,19 @@
+##master-page:HomepageTemplate
+#format wiki
+
+AdminGroup
+
+CharlesThayer/SubPage
+
+<pre>
+pre formatted
+  testing
+</pre>
+
+<verbatim>
+verbatim
+  testing
+</verbatim>
+
+----
+CategoryHomepage

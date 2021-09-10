@@ -1,0 +1,19 @@
+1174405754 *BadContent too old, have to check for an update...
+Timeout / socket / protocol error when accessing moinmaster: (-3, 'Temporary failure in name resolution')
+1174522645 *BadContent too old, have to check for an update...
+Timeout / socket / protocol error when accessing moinmaster: (-3, 'Temporary failure in name resolution')
+[Wed Mar 21 18:17:50 2007] KeyError: 'footer_fragments'
+[Wed Mar 21 18:17:58 2007] KeyError: 'footer_fragments'
+[Wed Mar 21 18:19:53 2007] KeyError: 'footer_fragments'
+[Wed Mar 21 18:20:02 2007] ImportError: cannot import name indie
+[Thu Mar 22 18:26:15 2007] SyntaxError: invalid syntax (hexagonal.py, line 37)
+[Thu Mar 22 18:26:34 2007] NameError: global name 'wikiutil' is not defined
+1174609683 *BadContent too old, have to check for an update...
+Timeout / socket / protocol error when accessing moinmaster: (-3, 'Temporary failure in name resolution')
+[Thu Mar 22 18:28:11 2007] NameError: global name 'Page' is not defined
+[Thu Mar 22 18:28:29 2007] NameError: global name 'Page' is not defined
+1176855217 *BadContent too old, have to check for an update...
+Timeout / socket / protocol error when accessing moinmaster: (-3, 'Temporary failure in name resolution')
+1176926400 *BadContent too old, have to check for an update...
+master: 20070416T12:22:38 mine: 19700101T00:00:00
+Fetching page from master...

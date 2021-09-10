@@ -1,0 +1,62 @@
+﻿# -*- coding: utf-8 -*-
+"""
+    MoinMoin technical theme
+
+    @copyright: (c) 2003-2004 by Nir Soffer
+    @license: GNU GPL, see COPYING for details.
+
+    As modified by Heather Stern for Ubuntu
+"""
+
+from MoinMoin.theme import modern, wikiutil
+from MoinMoin.Page import Page
+
+class Theme(modern.Theme):
+
+    name = "hexagonal"
+
+    def title(self, d):
+        """ Assemble the title (now using breadcrumbs)
+        
+        @param d: parameter dictionary
+        @rtype: string
+        @return: title html
+        """
+        _ = self.request.getText
+        content = []
+        if d['title_link']:
+            # having a link means we have a (linked) pagename 
+            # ONLY as title, not a message title
+            # XXX this method is rather ugly and should be improved
+
+            curpage = ''
+            segments = d['page_name'].split('/') # was: title_text
+            for s in segments[:-1]:
+                curpage += s
+                content.append("<li>%s</li>" % Page(self.request, curpage).link_to(self.request, s))
+                curpage += '/'
+            content.append(('<li><a class="backlink" title="%(title)s" href="%(href)s">%(text)s</a></li>') % {
+                'title': _('Click to do a full-text search for this title'),
+                'href': d['title_link'],
+                'text': wikiutil.escape(segments[-1]),
+                })
+        else:
+            content.append('<li>%s</li>' % wikiutil.escape(d['title_text']))
+
+        html = '''
+<ul id="pagelocation">
+%s
+</ul>
+''' % "".join(content)
+        return html
+
+        
+def execute(request):
+    """ Generate and return a theme object
+        
+    @param request: the request object
+    @rtype: Theme instance
+    @return: Theme object
+    """
+    return Theme(request)
+

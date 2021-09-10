@@ -1,0 +1,67 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.2
+date	2000.06.17.05.23.37;	author thayer;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2000.06.17.05.23.33;	author thayer;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@routine
+@
+text
+@#!/bin/sh
+
+run () {
+  time perl -e '
+    $|++;
+    $c = $ARGV[0];
+    print "$c => " . `$c | wc -l`; 
+    for $i (1..20) { 
+      print "."; `$c > /dev/null`; 
+    }
+    ' "$*"
+  echo
+}
+
+
+for file in todo /etc/magic never_going_to_find
+do 
+  echo Old fashioned
+  run "locate $file"
+
+  echo New fashioned
+  run "locate/locate $file"
+
+  echo New fashioned with --ignore_case on
+  run "locate/locate -i $file"
+done
+
+
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 1
+a1 1
+#!/bin/bash
+@

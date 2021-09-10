@@ -1,0 +1,12 @@
+date	node-0	node-1
+date	node-0	node-2
+date	node-1	node-0
+date	node-1	node-2
+date	node-2	node-0
+date	node-2	node-1
+date	node-6	node-7
+date	node-6	node-2
+date	node-7	node-6
+date	node-7	node-2
+date	node-2	node-6
+date	node-2	node-7

@@ -1,0 +1,34 @@
+To: Kevin Dalley <kevind@rahul.net>
+CC: Charles Thayer <thayer@mediabridge.com>
+Subject: Re: findutils ignore_case
+In-reply-to: Your message of "Tue, 16 May 2000 09:17:22 EDT."
+FCC: isaid
+---------- Don't write on this line. Compose your mail afterwards ----------
+Hi Kevin,
+  I owe you a big apology, I've been meaning to get a findutils patch
+to you which supports "locate -i", an option for ignoring case, aka
+case-insensitive.
+  The patch is attached below.  Basically it's just a couple lines.
+There are two spots that compare characters, which I've changed to
+call char_cmp_case() instead.  This way when want to ignore case in a
+search, the characters are compared so that 'a' matches 'A'.
+Other code changes are for accepting the -i option, and usage().
+  I implemented char_cmp_case() as a function, wrote a little test
+script, and found it slowed it down as much as 50%.  So I
+reimplemented it as a preprocessor macro.  Now the speed difference is
+tiny.
+  I've uploaded a tar of my version to the following URLs.  Here are the
+files which changed or were added:
+
+  http://www.b2si.com/~thayer/
+  http://www.b2si.com/~thayer/findutils-4.1-thayer.tar.gz
+
+  README.thayer               This file
+  locate/locate.c             Modified locate program with -i option
+  locate/locate.1             Revised man page
+  perf-test-thayer.sh         Runs a few tests to see how the timing compares
+                              to the original version
+  findutils-4.1.thayer.patch  Context diffs (diff -c) for use with patch
+
+cheers,
+/charles

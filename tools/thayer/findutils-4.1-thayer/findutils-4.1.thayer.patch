@@ -1,0 +1,169 @@
+*** findutils-4.1/locate/locate.c	Mon Sep 26 18:06:14 1994
+--- findutils-4.1-thayer/locate/locate.c	Sat Jun 17 02:29:14 2000
+***************
+*** 158,169 ****
+    return subp;
+  }
+  
+  /* Print the entries in DBFILE that match shell globbing pattern PATHPART.
+     Return the number of entries printed.  */
+  
+  static int
+! locate (pathpart, dbfile)
+       char *pathpart, *dbfile;
+  {
+    /* The pathname database.  */
+    FILE *fp;
+--- 158,188 ----
+    return subp;
+  }
+  
++ 
++ #if 0
++ /* thayer: cut because it ran 50% slower than original code */
++ /* Compare two characters.  If ignore_case is true then 'a' == 'A' */
++ static int 
++ char_case_cmp(a, b, ignore_case)
++      char a, b;
++      int ignore_case;
++ {
++   return (a == b 
++ 	  || (ignore_case && (tolower(a) == tolower(b))));
++ }
++ #endif
++ 
++ /* Compare two characters.  If ic (ignore_case) is true then 'a' == 'A' */
++ /* BEWARE OF SIDE-EFFECTS */
++ #define char_case_cmp(a,b,ic)((a)==(b)||((ic)&&(((a)-(b)=='a'-'A')||(b)-(a)=='a'-'A')))
++ 
+  /* Print the entries in DBFILE that match shell globbing pattern PATHPART.
+     Return the number of entries printed.  */
+  
+  static int
+! locate (pathpart, dbfile, ignore_case)
+       char *pathpart, *dbfile;
++      int ignore_case;
+  {
+    /* The pathname database.  */
+    FILE *fp;
+***************
+*** 294,306 ****
+  	 in PATHPART.  */
+        for (prev_fast_match = false; s >= cutoff; s--)
+  	/* Fast first char check. */
+! 	if (*s == *patend)
+  	  {
+  	    char *s2;		/* Scan the path we read in. */
+  	    register char *p2;	/* Scan `patend'.  */
+  
+! 	    for (s2 = s - 1, p2 = patend - 1; *p2 != '\0' && *s2 == *p2;
+! 					       s2--, p2--)
+  	      ;
+  	    if (*p2 == '\0')
+  	      {
+--- 313,326 ----
+  	 in PATHPART.  */
+        for (prev_fast_match = false; s >= cutoff; s--)
+  	/* Fast first char check. */
+! 	if (char_case_cmp(*s, *patend, ignore_case))
+  	  {
+  	    char *s2;		/* Scan the path we read in. */
+  	    register char *p2;	/* Scan `patend'.  */
+  
+! 	    for (s2 = s - 1, p2 = patend - 1; 
+! 		 *p2 != '\0' && char_case_cmp(*s2, *p2, ignore_case);
+! 		 s2--, p2--)
+  	      ;
+  	    if (*p2 == '\0')
+  	      {
+***************
+*** 342,348 ****
+       int status;
+  {
+    fprintf (stream, "\
+! Usage: %s [-d path] [--database=path] [--version] [--help] pattern...\n",
+  	   program_name);
+    exit (status);
+  }
+--- 362,368 ----
+       int status;
+  {
+    fprintf (stream, "\
+! Usage: %s [-d path] [--database=path] [-i] [--ignore-case] [--version] [--help] pattern...\n",
+  	   program_name);
+    exit (status);
+  }
+***************
+*** 350,355 ****
+--- 370,376 ----
+  static struct option const longopts[] =
+  {
+    {"database", required_argument, NULL, 'd'},
++   {"ignore-case", no_argument, NULL, 'i'},
+    {"help", no_argument, NULL, 'h'},
+    {"version", no_argument, NULL, 'v'},
+    {NULL, no_argument, NULL, 0}
+***************
+*** 361,367 ****
+       char **argv;
+  {
+    char *dbpath;
+!   int found = 0, optc;
+  
+    program_name = argv[0];
+  
+--- 382,388 ----
+       char **argv;
+  {
+    char *dbpath;
+!   int found = 0, optc, ignore_case = 0;
+  
+    program_name = argv[0];
+  
+***************
+*** 369,375 ****
+    if (dbpath == NULL)
+      dbpath = LOCATE_DB;
+  
+!   while ((optc = getopt_long (argc, argv, "d:", longopts, (int *) 0)) != -1)
+      switch (optc)
+        {
+        case 'd':
+--- 390,396 ----
+    if (dbpath == NULL)
+      dbpath = LOCATE_DB;
+  
+!   while ((optc = getopt_long (argc, argv, "id:", longopts, (int *) 0)) != -1)
+      switch (optc)
+        {
+        case 'd':
+***************
+*** 376,381 ****
+--- 397,406 ----
+  	dbpath = optarg;
+  	break;
+  
++       case 'i':
++ 	ignore_case++;
++ 	break;
++ 
+        case 'h':
+  	usage (stdout, 0);
+  
+***************
+*** 395,401 ****
+        char *e;
+        next_element (dbpath);	/* Initialize.  */
+        while ((e = next_element ((char *) NULL)) != NULL)
+! 	found |= locate (argv[optind], e);
+      }
+  
+    exit (!found);
+--- 420,426 ----
+        char *e;
+        next_element (dbpath);	/* Initialize.  */
+        while ((e = next_element ((char *) NULL)) != NULL)
+! 	found |= locate (argv[optind], e, ignore_case);
+      }
+  
+    exit (!found);

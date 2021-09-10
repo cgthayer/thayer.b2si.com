@@ -1,0 +1,177 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.1
+date	2020.01.13.06.47.19;	author thayer;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- base href="http://thayer.b2si.com/" -->
+  <link rel="icon" href="images/cs-favicon.ico" type="image/x-icon" />
+  <title>Django DRF Cheat Sheet</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	  crossorigin="anonymous"></script>
+
+  <!-- sumo -->
+  <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='22cb51ba7caae4c7787809bad98ea8216c342a4720087f1f1bde272f364ff494';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+  
+  <!-- adsense support (login: denmark@@ny.com) -->
+  <script data-ad-client="ca-pub-6143770949021679" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1660181-11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-1660181-11');
+  </script>
+  
+  <style>
+  body, td, p {
+    font-family: Verdana, Arial, Helvetica, Chicago, sans-serif;
+    font-size: 12px;
+  }
+  .sh {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  h4 {
+    font-weight: bold;
+  }
+
+  .panel {
+    background-color: transparent;
+  }
+  .panel-primary>.panel-heading {
+    background-image: none;
+    background-color: #0066CC;
+    border-color: #0066CC;
+  }
+  .panel-primary {
+    margin-bottom: 0.5em;
+  }
+  .panel-heading {
+    padding: 0.5em;
+  }
+  .panel-body {
+    padding: 0.5em;
+    background-color: transparent;
+  }
+  </style>
+</head>
+<body bgcolor="#FFFFFF" background="images/hex-bg-grid.gif">
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 style="font-size: 14pt;"><b>Django DRF Cheat Sheet</b>
+	<img src="icons-thayer/document.gif" align=right>
+	(<a href="http://thayer.b2si.com/">Charles Thayer</a>)
+      </h1>
+      <hr noshade style="height: 1px;">
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+      <p>Here's the PDF: <a href="drf-cheatsheet.pdf">Django DRF
+          Cheat Sheet</a> v1.3
+      </p>
+      <blockquote><i>Welcome. This is a guide to the parts of DRF
+          (Django Rest Framework) that I routinely forget or need to
+          reference periodically.  This is not a learning resource nor
+          a tutorial, but intended for those already programming in
+          DRF.  --Charles
+      </i></blockquote>
+
+      <p>Got constructive feedback? <a href="https://forms.gle/QN5fWpgGFZXBCfy96">Let me know</a><br>
+        (Want a new or different cheat sheet? DRF Basics, Django, CBV, Firebase?)
+      </p>
+    </div>
+    
+    <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <h4 class="panel-title">Info</h4>
+	</div>
+	<div class="panel-body">
+	  <ul>
+	    <li>PDF document: <a href="drf-cheatsheet.pdf">Django DRF Cheat
+ Sheet</a> v1.3</li>
+	    <li>Official site: <a href="https://www.django-rest-framework.org/">Django REST Framework</a></li>
+            <li>Official tutorial: <a href="https://www.django-rest-framework.org/tutorial/quickstart/">Quickstart Tutorial</a></li>
+            <li>Real Python's single-page tutorial: <a href="https://realpython.com/django-rest-framework-quick-start/">Django Rest Framework – An Introduction</a></li>
+            <li>Sunscrapers' multi-part tutorial: <a href="https://sunscrapers.com/blog/ultimate-tutorial-django-rest-framework-part-1/">The Ultimate Tutorial for Django REST Framework: CRUD (Part 1)</a></li>
+            <li>Agiliq's book for learners: <a href="https://books.agiliq.com/projects/django-api-polls-tutorial/en/latest/">Building APIs with Django REST Framework</a></li>
+            <li>GitLab Repo for cheat sheet code: <a href="https://gitlab.com/cgthayer/drf-cheatsheet">drf-cheatsheet</a></li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <h4 class="panel-title">About</h4>
+	</div>
+	<div class="panel-body">
+
+          <p>
+            I've been using Django and DRF off and on for way too
+            long. Lately, I've been working as the CTO of a startup in
+            San Francisco that built a mobile app for "managed
+            messaging" for businesses and professionals. That project
+            incorporated a fair amount of API/Javascript communication,
+            which lead me to take notes on the parts of DRF that I
+            needed to review periodically.</p>
+
+          <p>
+            I hope you find it helpful and provide constructive
+            feedback.  If enough people do, I'll continue to update
+            and distribute it.  Thanks.</p>           
+          
+          -- <a href="http://thayer.b2si.com">Charles Thayer</a> (thayer at b2si com)
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+@

@@ -1,0 +1,1387 @@
+head	1.34;
+access;
+symbols;
+locks; strict;
+comment	@# @;
+
+
+1.34
+date	2020.01.13.08.41.56;	author thayer;	state Exp;
+branches;
+next	1.33;
+
+1.33
+date	2020.01.10.05.39.22;	author thayer;	state Exp;
+branches;
+next	1.32;
+
+1.32
+date	2020.01.10.05.38.33;	author thayer;	state Exp;
+branches;
+next	1.31;
+
+1.31
+date	2020.01.09.17.37.17;	author thayer;	state Exp;
+branches;
+next	1.30;
+
+1.30
+date	2020.01.09.17.19.23;	author thayer;	state Exp;
+branches;
+next	1.29;
+
+1.29
+date	2020.01.09.16.57.44;	author thayer;	state Exp;
+branches;
+next	1.28;
+
+1.28
+date	2020.01.08.17.32.21;	author thayer;	state Exp;
+branches;
+next	1.27;
+
+1.27
+date	2020.01.07.04.21.28;	author thayer;	state Exp;
+branches;
+next	1.26;
+
+1.26
+date	2020.01.02.23.41.08;	author thayer;	state Exp;
+branches;
+next	1.25;
+
+1.25
+date	2020.01.02.23.27.45;	author thayer;	state Exp;
+branches;
+next	1.24;
+
+1.24
+date	2020.01.02.23.26.27;	author thayer;	state Exp;
+branches;
+next	1.23;
+
+1.23
+date	2017.01.19.17.50.20;	author thayer;	state Exp;
+branches;
+next	1.22;
+
+1.22
+date	2017.01.17.23.17.01;	author thayer;	state Exp;
+branches;
+next	1.21;
+
+1.21
+date	2017.01.17.23.15.59;	author thayer;	state Exp;
+branches;
+next	1.20;
+
+1.20
+date	2017.01.12.02.19.30;	author thayer;	state Exp;
+branches;
+next	1.19;
+
+1.19
+date	2017.01.12.02.18.31;	author thayer;	state Exp;
+branches;
+next	1.18;
+
+1.18
+date	2017.01.12.00.04.28;	author thayer;	state Exp;
+branches;
+next	1.17;
+
+1.17
+date	2017.01.11.05.25.00;	author thayer;	state Exp;
+branches;
+next	1.16;
+
+1.16
+date	2017.01.11.03.49.02;	author thayer;	state Exp;
+branches;
+next	1.15;
+
+1.15
+date	2017.01.09.19.09.25;	author thayer;	state Exp;
+branches;
+next	1.14;
+
+1.14
+date	2017.01.09.19.06.14;	author thayer;	state Exp;
+branches;
+next	1.13;
+
+1.13
+date	2017.01.09.19.01.20;	author thayer;	state Exp;
+branches;
+next	1.12;
+
+1.12
+date	2011.02.24.22.13.43;	author thayer;	state Exp;
+branches;
+next	1.11;
+
+1.11
+date	2010.11.18.07.15.18;	author thayer;	state Exp;
+branches;
+next	1.10;
+
+1.10
+date	2010.11.18.07.12.12;	author thayer;	state Exp;
+branches;
+next	1.9;
+
+1.9
+date	2010.03.17.15.45.30;	author thayer;	state Exp;
+branches;
+next	1.8;
+
+1.8
+date	2010.03.17.15.39.26;	author thayer;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2010.03.17.15.05.22;	author thayer;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2008.02.23.02.37.14;	author thayer;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2008.02.23.01.58.19;	author thayer;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2007.09.25.17.02.01;	author thayer;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2007.06.25.21.53.04;	author thayer;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2007.06.19.17.00.37;	author thayer;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2007.06.19.16.58.10;	author thayer;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.34
+log
+@routine
+@
+text
+@<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- base href="http://thayer.b2si.com/" -->
+  <link rel="icon" href="images/cs-favicon.ico" type="image/x-icon" />
+  <title>Charles Thayer's Homepage: 2020</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	  crossorigin="anonymous"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1660181-11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-1660181-11');
+  </script>
+
+  <style>
+  body, td, p {
+    font-family: Verdana, Arial, Helvetica, Chicago, sans-serif;
+    font-size: 12px;
+  }
+  .sh {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  h4 {
+    font-weight: bold;
+  }
+  ul {
+    padding-inline-start: 2em;
+  }
+
+  .panel {
+    background-color: transparent;
+  }
+  .panel-primary>.panel-heading {
+    background-image: none;
+    background-color: #0066CC;
+    border-color: #0066CC;
+  }
+  .panel-primary {
+    margin-bottom: 0.5em;
+  }
+  .panel-heading {
+    padding: 0.5em;
+  }
+  .panel-body {
+    padding: 0.5em;
+    background-color: transparent;
+  }
+  </style>
+</head>
+<body bgcolor="#FFFFFF" background="images/hex-bg-grid.gif">
+
+<!--
+<img src="icons-thayer/document.gif" align=right>  
+<span class="sh">CGT</font>: 
+Charles Thayer's Homepage
+(<a href="http://thayer.b2si.com/">thayer.b2si.com</a>)</span>
+<hr noshade size="1">
+-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 style="font-size: 14pt;"><b>Charles Thayer</b>
+	<img src="icons-thayer/document.gif" align=right>  
+	(<a href="http://thayer.b2si.com/">thayer.b2si.com</a>)
+      </h1>
+      <hr noshade style="height: 1px;">
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+      <blockquote><i>I work on building a better future using technology and software.
+	  I've worked on innovative startups, distributed data storage, cluster
+	  management, web search, and city guides.
+      </i></blockquote>
+    </div>
+    
+    <div class="col-xs-12 col-md-4" style="padding-top: 0;">
+
+      <!-- ------------------------------------------------------------ -->
+      <!-- extra width
+	   <img src="images/1.gif" border=0 width=310 height=1><br>
+	   -->
+
+      <center>
+	<table border=0 cellpadding=0 cellspacing=0 width=300>
+	  <!-- helps browser align -->
+	  <tr>
+	    <td width="50" height="0"></td>
+	    <td width="50" height="0"></td>
+	    <td width="50" height="0"></td>
+	    <td width="50" height="0"></td>
+	    <td width="50" height="0"></td>
+	    <td width="50" height="0"></td>
+	  </tr>
+	  <tr>
+	    <td width=50 height=75 align=center valign=center></td>
+	    <td background="images/hex-dir-nw.gif"
+		width=100 height=75 align=center valign=center colspan=2
+		></td>
+	    <td background="images/hex-dir-ne.gif"
+		width=100 height=75 align=center valign=center colspan=2
+		><img src="icons-thayer/folder.gif"
+		      border=0><br><b>Work</b></td>
+	    <td width=50 height=75 align=center valign=center></td>
+	  </tr>
+
+	  <tr>
+	    <td background="images/hex-dir-w.gif"
+		width=100 height=75 align=center valign=center colspan=2
+		><img border=0
+		      src="icons-thayer/folder.gif"><br><b>Startups</b></td>
+	    <td background="images/hex-dir-mid.gif"
+		width=100 height=75 align=center valign=center colspan=2
+		><img src="icons-thayer/document.gif"><br><b>Charles<br>Thayer</b></td>
+	    <td background="images/hex-dir-e.gif"
+		width=100 height=75 align=center valign=center colspan=2
+		></td>
+	  </tr>
+
+	  <tr>
+	    <td width=50 height=75 align=center valign=center> </td>
+	    <td background="images/hex-dir-sw.gif"
+		width=100 height=75 align=center valign=center colspan=2
+		></td>
+	    <td background="images/hex-dir-se.gif"
+		width=100 height=75 align=center valign=center colspan=2
+		><img	src="icons-thayer/folder.gif"
+			border=0><br><b>Personal</b></td>
+	    <td width=50 height=75 align=center valign=center></td>
+	  </tr>
+	</table>
+      </center>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-4">
+    </div>    
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <h4 class="panel-title">Startups</h4>
+	</div>
+	<div class="panel-body">
+	  <ul>
+	    <li>CTO <a href="https://www.connectwith.ai/">ConnectWith.ai</a> (<a href="https://www.notify.io/">Notify.io</a>)</li>
+            <ul>
+              <li>Creators of <a href="https://apps.apple.com/us/app/textwith-superhuman-texting/id1430365839">TextWith - Superhuman Texting</a> (mobile app)</li>
+              <li>Customers have included: The Gap Inc. (Hillcity, Athleta, Old Navy), The Wall Street Journal, and several startups.</li>
+              <li>In partnership pilots with Facebook and Google.
+            </ul>
+	    <li>Founder: <a href="https://dev.cityscout.us/">CityScout.us</a> mobile web app</li>
+	    <li>Early Manager: Tapstone, enterprise management</li>
+	    <li>CTO: CityRealty Inc. (<a href="https://www.cityrealty.com">CityRealty.com</a>)</li>
+	    <li>Founder: Mediabridge Infosystems Inc. (<a href="https://ny.com">NY.com</a>) consulting firm</li>
+	    <li>Implementor and advisor to several others...</li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <h4 class="panel-title">Work</h4>
+	</div>
+	<div class="panel-body">
+	  <ul>
+	    <li><a href="resume2020.html">Resum&eacute; 2020</a>
+	      (<a href="charles-thayer-resume-cv-2020.pdf">pdf</a>)
+	      <!--
+		  <a href="resume2017.html">2017 html</a> /
+		  <a href="resume2010.html">2010 html</a> /
+		  <a href="resume2003.html">2003 html</a> /
+		  <a href="resume2003.doc">2003 doc</a> /
+		  <a href="resume2003.txt">2003 text</a>.<br>
+		  -->
+	    <li><a href="http://www.linkedin.com/in/cgthayer">LinkedIn Profile</a></li>
+            <li><a href="https://apps.apple.com/us/app/textwith-superhuman-texting/id1430365839">TextWith
+              - Superhuman Texting</a> (by ConnectWith.ai /
+              Notify.io)</li>
+            <li><a href="drf.html">Django DRF Cheat Sheet</a>
+	    <li><a href="https://github.com/cgthayer">GitHub</a>:
+	      <a href="https://github.com/facebook/folly">folly</a> / 
+	      <a href="https://github.com/facebook/jcommon">jcommon</a> /
+              <a href="https://gist.github.com/cgthayer/4f0ab45c9972688d5f90f2a4b46f5910">docker notes for n00bs</a>
+	    <li><a href="http://facebook.com/">Facebook</a></li>
+	    <li><a href="https://dev.cityscout.us/">CityScout.us</a></li>
+	    <li>Yahoo! Search Technology (Inktomi)</li>
+	    <li>Tapstone Inc (Teleias Inc.)</li>
+	    <li><a href="http://www.cityrealty.com/">CityRealty.com</a></li>
+	    <li><a href="http://www.mediabridge.com/front.html">Mediabridge Infosystems</a></li>
+	    <li><a href="http://www.cs.columbia.edu/">CS Dept, Columbia U.</a></li>
+	  </ul>
+	</div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+      <div class="panel panel-primary">
+	<div class="panel-heading">
+	  <h4 class="panel-title">Personal</h4>
+	</div>
+	<div class="panel-body">
+	  <ul>
+            <li>Support my open source software & writing:
+              <ul>
+                <li>Email me thanks or requests at b2si.com</li>
+                <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CPHHUPLXDVNFJ&source=url">Donate on PayPal</a></li>
+                <li><a href="https://www.patreon.com/charlesthayer">Patreon</a></li>
+              </ul>
+            </li>
+	    <li>Lived in: San Francisco, New York City</li>
+	    <li>Graduate of EE from Columbia U.</li>
+	    <li>Interests: Gardening<a href="http://bit.ly/2jFs26n">,</a> Tinkering, Woodworking, Startups</li>
+	    <li>Links:
+              <a href="https://github.com/cgthayer">GitHub</a>,
+	      <a href="http://facebook.com/cgthayer">My Facebook page</a>,
+	      <a href="https://www.pinterest.com/cgthayer/">Pinterest</a>,
+              <a href="https://gitlab.com/cgthayer">GitLab</a>
+	      <a href="https://twitter.com/cgthayer">Twitter</a>,
+	    </li>
+	    <li>Favorite numbers: <a href="http://en.wikipedia.org/wiki/6_%28number%29">6</a>,
+	      <a href="https://en.wikipedia.org/wiki/Golden_ratio">&phi;</a>
+	    </li>
+	  </ul>	
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+@
+
+
+1.33
+log
+@routine
+@
+text
+@d10 1
+a10 1
+  <title>Charles Thayer's Homepage: 2017</title>
+@
+
+
+1.32
+log
+@*** empty log message ***
+@
+text
+@d214 2
+a215 2
+	      <a href="https://github.com/facebook/folly">folly</a>,
+	      <a href="https://github.com/facebook/jcommon">jcommon</a>
+@
+
+
+1.31
+log
+@*** empty log message ***
+@
+text
+@d216 1
+@
+
+
+1.30
+log
+@routine
+@
+text
+@d238 1
+@
+
+
+1.29
+log
+@routine
+@
+text
+@d30 9
+a38 2
+  <!-- adsense support (login: denmark@@ny.com) -->
+  <script data-ad-client="ca-pub-6143770949021679" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+@
+
+
+1.28
+log
+@routine
+@
+text
+@d30 3
+@
+
+
+1.27
+log
+@routine
+@
+text
+@d42 3
+d167 6
+d224 7
+a231 2
+	    <li>Lived in: San Francisco, New York City</li>
+	    <li><a href="https://www.facebook.com/mckinley.garden.friends/">McKinley Garden Friends</a></li>
+d234 1
+d237 1
+a238 2
+              <a href="https://github.com/cgthayer">GitHub</a>,
+              <a href="https://gitlab.com/cgthayer">GitLab</a>
+@
+
+
+1.26
+log
+@routine
+@
+text
+@d180 2
+a181 2
+	    <li><a href="resume2017.html">Resum&eacute; 2017</a>
+	      (<a href="charles-thayer-resume-cv-2017.pdf">pdf</a>)
+d183 1
+@
+
+
+1.25
+log
+@routine
+@
+text
+@a213 1
+	    <li><a href="http://facebook.com/cgthayer">My Facebook page</a></li>
+d219 1
+d221 3
+a223 2
+	      <a href="http://del.icio.us/cgthayer/">Del.icio.us</a>,
+	      <a href="https://twitter.com/cgthayer">Twitter</a>
+@
+
+
+1.24
+log
+@*** empty log message ***
+@
+text
+@d192 1
+@
+
+
+1.23
+log
+@routine
+@
+text
+@d189 3
+@
+
+
+1.22
+log
+@routine
+@
+text
+@d9 1
+a9 1
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+@
+
+
+1.21
+log
+@*** empty log message ***
+@
+text
+@d181 1
+@
+
+
+1.20
+log
+@routine
+@
+text
+@d74 3
+a76 3
+<div class="row">
+  <div class="col-xs-12">
+    <h1 style="font-size: 14pt;"><b>Charles Thayer</b>
+d79 14
+a92 2
+    </h1>
+    <hr noshade style="height: 1px;">
+d94 49
+a142 48
+    <!-- ------------------------------------------------------------ -->
+    <!-- extra width -->
+    <img src="images/1.gif" border=0 width=310 height=1><br>
+
+    <center>
+      <table border=0 cellpadding=0 cellspacing=0 width=300>
+	<!-- helps browser align -->
+	<tr>
+	  <td width="50" height="0"></td>
+	  <td width="50" height="0"></td>
+	  <td width="50" height="0"></td>
+	  <td width="50" height="0"></td>
+	  <td width="50" height="0"></td>
+	  <td width="50" height="0"></td>
+	</tr>
+	<tr>
+	  <td width=50 height=75 align=center valign=center></td>
+	  <td background="images/hex-dir-nw.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ></td>
+	  <td background="images/hex-dir-ne.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ><img src="icons-thayer/folder.gif"
+		    border=0><br><b>Work</b></td>
+	  <td width=50 height=75 align=center valign=center></td>
+	</tr>
+
+	<tr>
+	  <td background="images/hex-dir-w.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ><img border=0
+		    src="icons-thayer/folder.gif"><br><b>Startups</b></td>
+	  <td background="images/hex-dir-mid.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ><img src="icons-thayer/document.gif"><br><b>Charles<br>Thayer</b></td>
+	  <td background="images/hex-dir-e.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ></td>
+	</tr>
+
+	<tr>
+	  <td width=50 height=75 align=center valign=center> </td>
+	  <td background="images/hex-dir-sw.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ></td>
+	  <td background="images/hex-dir-se.gif"
+	      width=100 height=75 align=center valign=center colspan=2
+	      ><img	src="icons-thayer/folder.gif"
+d144 10
+a153 4
+	  <td width=50 height=75 align=center valign=center></td>
+	</tr>
+      </table>
+    </center>
+a154 1
+</div>
+d156 15
+a170 14
+<div class="row">
+  <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+	<h4 class="panel-title">Startups</h4>
+      </div>
+      <div class="panel-body">
+	<ul>
+	  <li>Founder: <a href="https://dev.cityscout.us/">CityScout.us</a> mobile web app</li>
+	  <li>Early Manager: Tapstone, enterprise management</li>
+	  <li>CTO: CityRealty Inc. (<a href="https://www.cityrealty.com">CityRealty.com</a>)</li>
+	  <li>Founder: Mediabridge Infosystems Inc. (<a href="https://ny.com">NY.com</a>) consulting firm</li>
+	  <li>Implementor and advisor to several others...</li>
+	</ul>
+d173 27
+a199 27
+  </div>
+  <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+	<h4 class="panel-title">Work</h4>
+      </div>
+      <div class="panel-body">
+	<ul>
+	  <li><a href="resume2017.html">Resum&eacute; 2017</a>
+	    <!--
+		<a href="resume2010.html">2010 html</a> /
+		<a href="resume2003.html">2003 html</a> /
+		<a href="resume2003.doc">2003 doc</a> /
+		<a href="resume2003.txt">2003 text</a>.<br>
+		-->
+	  <li><a href="http://www.linkedin.com/in/cgthayer">LinkedIn Profile</a></li>
+	  <li><a href="https://github.com/cgthayer">GitHub</a>:
+	    <a href="https://github.com/facebook/folly">folly</a>,
+	    <a href="https://github.com/facebook/jcommon">jcommon</a>
+	  <li><a href="http://facebook.com/">Facebook</a></li>
+	  <li><a href="https://dev.cityscout.us/">CityScout.us</a></li>
+	  <li>Yahoo! Search Technology (Inktomi)</li>
+	  <li>Tapstone Inc (Teleias Inc.)</li>
+	  <li><a href="http://www.cityrealty.com/">CityRealty.com</a></li>
+	  <li><a href="http://www.mediabridge.com/front.html">Mediabridge Infosystems</a></li>
+	  <li><a href="http://www.cs.columbia.edu/">CS Dept, Columbia U.</a></li>
+	</ul>
+d202 22
+a223 22
+  </div>
+  <div class="col-xs-12 col-md-4" style="padding: 0.5em;">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+	<h4 class="panel-title">Personal</h4>
+      </div>
+      <div class="panel-body">
+	<ul>
+	  <li><a href="http://facebook.com/cgthayer">My Facebook page</a></li>
+	  <li>Graduate of EE from Columbia U.</li>
+	  <li>Lived in: San Francisco, New York City</li>
+	  <li><a href="https://www.facebook.com/mckinley.garden.friends/">McKinley Garden Friends</a></li>
+	  <li>Interests: Gardening<a href="http://bit.ly/2jFs26n">,</a> Tinkering, Woodworking, Startups</li>
+	  <li>Links:
+	    <a href="https://www.pinterest.com/cgthayer/">Pinterest</a>,
+	    <a href="http://del.icio.us/cgthayer/">Del.icio.us</a>,
+	    <a href="https://twitter.com/cgthayer">Twitter</a>
+	  </li>
+	  <li>Favorite numbers: <a href="http://en.wikipedia.org/wiki/6_%28number%29">6</a>,
+	    <a href="https://en.wikipedia.org/wiki/Golden_ratio">&phi;</a>
+	  </li>
+	</ul>	
+a226 4
+</div>
+
+</div>
+</div>
+@
+
+
+1.19
+log
+@*** empty log message ***
+@
+text
+@d9 1
+a9 1
+  <link rel="icon" href="http://thayer.b2si.com/favicon.ico" type="image/x-icon" />
+@
+
+
+1.18
+log
+@routine
+@
+text
+@d9 1
+a9 1
+  <link rel="SHORTCUT ICON" href="http://thayer.b2si.com/favicon.ico"/>
+@
+
+
+1.17
+log
+@routine
+@
+text
+@d76 6
+d146 1
+a146 1
+	  <li>Founder: <a href="https://cityscout.us/">CityScout.us</a> mobile web app</li>
+d174 1
+d195 1
+a195 1
+	  <li>Interests: Gardening, Tinkering, Woodworking, Startups</li>
+@
+
+
+1.16
+log
+@*** empty log message ***
+@
+text
+@d1 2
+d4 58
+a61 16
+<!-- base href="http://thayer.b2si.com/" -->
+<link rel="SHORTCUT ICON" href="http://thayer.b2si.com/favicon.ico"/>
+<title>Charles Thayer's Homepage: 2017</title>
+<STYLE>
+body, td, p {
+  font-family: Verdana, Arial, Helvetica, Chicago, sans-serif;
+  font-size: 12px;
+}
+.sh {
+  font-size: 14px;
+  font-weight: bold;
+}
+h4 {
+  font-weight: bold;
+}
+</STYLE>
+a62 1
+
+a63 1
+<TABLE BORDER=0>
+d65 1
+a65 65
+<TR><TD COLSPAN=2>
+<!-- top space -->
+</TD></TR>
+
+<TR><TD VALIGN=TOP>
+<!-- ------------------------------------------------------------ -->
+<!-- extra width -->
+<img src="images/1.gif" border=0 width=310 height=1><br>
+
+<table border=0 cellpadding=0 cellspacing=0 width=300>
+<!-- helps browser align -->
+<tr>
+<td width="50" height="0"></td>
+<td width="50" height="0"></td>
+<td width="50" height="0"></td>
+<td width="50" height="0"></td>
+<td width="50" height="0"></td>
+<td width="50" height="0"></td>
+</tr>
+<tr>
+<td width=50 height=75 align=center valign=center> </td>
+<td background="images/hex-dir-nw.gif"
+  width=100 height=75 align=center valign=center colspan=2><!--
+   <a href="http://www.advogato.org/person/thayer/"><img 
+     src="icons-thayer/folder.gif"
+     border=0><br><b>Diary</b></a>--></td>
+<td background="images/hex-dir-ne.gif"
+  width=100 height=75 align=center valign=center colspan=2>
+  <a href="http://www.facebook.com/people/Charles_Thayer/615585335"><img 
+    src="icons-thayer/folder.gif" 
+    border=0><br><b>Friends</b></a></td>
+<td width=50 height=75 align=center valign=center> </td>
+</tr>
+
+<tr>
+<td background="images/hex-dir-w.gif"
+  width=100 height=75 align=center valign=center colspan=2>
+  <a href="resume2017.html"><img border=0
+    src="icons-thayer/folder.gif"><br><b>Work</b></a></td>
+<td background="images/hex-dir-mid.gif"
+  width=100 height=75 align=center valign=center colspan=2>
+  <img src="icons-thayer/document.gif"><br><b>Home</b></td>
+<td background="images/hex-dir-e.gif"
+  width=100 height=75 align=center valign=center colspan=2>
+  <a href="tools"><img border=0
+    src="icons-thayer/folder.gif"><br><b>Tools</b></a></td>
+</tr>
+
+<tr>
+<td width=50 height=75 align=center valign=center> </td>
+<td background="images/hex-dir-sw.gif"
+  width=100 height=75 align=center valign=center colspan=2>
+  <!--a href="sites.html"--><img border=0
+    src="icons-thayer/document.gif"><br><b>Sites</b></td>
+<td background="images/hex-dir-se.gif"
+  width=100 height=75 align=center valign=center colspan=2> 
+  <!--a href="http://thayer.b2si.com/meme/wiki/moin.cgi/CharlesThayer"--><img
+     src="icons-thayer/folder.gif"
+     border=0><br><b>Wiki</b></td>
+<td width=50 height=75 align=center valign=center> </td>
+</tr>
+</table>
+
+</TD><TD VALIGN=TOP>
+<!-- ------------------------------------------------------------ -->
+d67 1
+a67 1
+<span class="sh">CGT<font size=-1><sup>3</sup></font>: 
+a70 114
+
+<!--
+<h4>Greetings</h4>
+<blockquote>
+<i>
+
+<Table border=0>
+<Tr><Td>2010/11:
+Currently building a multi-tenant HBase/HDFS/Hadoop cluster
+application in Java which I was the lead architect/designer for.
+<p>
+</Td>
+
+<Tr><Td>2010/03:
+
+Yahoo and Microsoft have approval from the EU and US for working with
+Bing.  Since I worked on the Content Systems' Crawler (and Indexer) my
+role will change with the transition.  Since I work on cluster
+management, distributed computing, and monitoring, the future is
+fairly open.  However, the scale I work with is clusters of thousands
+of computers and that limits me to larger projects.
+
+--thayer at b2si dot com.
+
+<p>
+</Td>
+<Td valign=top rowspan=2>
+
+<table border=1 cellpadding=4 cellspacing=0>
+<tr>
+<td>
+<form action="http://search.yahoo.com/search">
+Search Web: 
+<input type=text name=p>
+</form>
+</td>
+</tr>
+</table>
+
+</Td>
+</Tr>
+
+<Tr><Td> </Td></Tr>
+
+<Tr><Td> 2007/07: Still working for <a
+href="http://www.yahoo.com/">Yahoo!</a> (who acquired <a
+href="http://www.inktomi.com/">Inktomi</a>).  I'm currently on the
+crawler team, doing linux cluster kung-fu, after having done the same
+on the indexer cluster team.  What could be better than writing
+software to manage large clusters?  Playing with my kid, and roaming
+the Bay Area. --thayer at b2si dot com.
+<p>
+
+</Td>
+
+<Td></Td>
+
+</Tr> 
+
+</Table>
+<p>
+
+</blockquote>
+</i>
+-->
+
+
+<h4>Quick Links</h4>
+
+<table cellspacing=1 cellpadding=0 border=0 width=100%>
+<tr>
+<th bgcolor=#0066CC><font color=white>Work Related:</font></td>
+<td width=2></td>
+<th bgcolor=#0066CC><font color=white>Software:</font></td>
+<td width=2></td>
+<th bgcolor=#0066CC><font color=white>Personal:</font></td>
+</tr>
+
+<tr>
+<td valign=top>
+
+<ul>
+<li><a href="resume2017.html">Resum&eacute; 2017</a>
+<!--
+<br>
+   <a href="resume2010.html">2010 html</a> /
+   <a href="resume2003.html">2003 html</a> /
+   <a href="resume2003.doc">2003 doc</a> /
+   <a href="resume2003.txt">2003 text</a>.<br>
+-->
+<p>
+<li><a href="http://www.linkedin.com/in/cgthayer">LinkedIn Profile</a>
+<li><a href="http://search.yahoo.com/">Yahoo!</a> (Inktomi)
+<li>Tapstone Inc (Teleias Inc.)
+<li><a href="http://www.cityrealty.com/">CityRealty.com</a>
+<li><a href="http://www.mediabridge.com/front.html">Mediabridge Infosystems</a>
+<li><a href="http://www.ny.com/">NY.com</a>
+<li><a href="http://www.b2si.com/">Base 2 Systems Inc.</a>
+<li><a href="http://www.cs.columbia.edu/">CS Dept, Columbia U.</a>
+</ul>
+</td>
+
+<td bgcolor=#cccccc width=2><img src="images/1.gif"></td>
+
+<td valign=top>
+
+<ul>
+<li><a href="tools/thayer/findutils-4.1-thayer.tar.gz">Patched findutils-4.1 (tgz)</a>
+<!--<li><a href="http://www.b2si.com/~thayer/src/">Repository</a> --b2si-->
+<!--
+<li><a href="ftp://ftp.cs.columbia.edu/archives/">Repository</a>
+  <br>--cs (<a href="ftp://ftp.cs.columbia.edu/pub/thayer/">my old dir</a>)
+<li><a href="perl-modules.html">Perl Modules List</a>
+  <br>--see <a href="http://cpan.org">cpan.org</a>
+d73 133
+a205 40
+<p>
+<li><a href="http://slashdot.com/">/. SlashDot</a>
+<li><a href="http://freshmeat.net/">FM][</a>
+<li><a href="http://sourceforge.com/">SourceForge</a>
+<li><a href="http://www.advogato.org/">Advogato</a>
+</ul>
+</td>
+
+<td bgcolor=#cccccc width=2><img src="images/1.gif"></td>
+<td valign=top>
+
+<ul>
+<!-- <li><a href="/meme/wiki/moin.cgi/LinkLibrary">LinkLibrary</a> -->
+<li><a href="http://del.icio.us/cgthayer">My Links</a>
+<li>My old 
+<a href="http://groups.google.com/groups?q=author:charles+author:thayer+author:thayer%40&hl=en&start=0&sa=N">usenet</a> /
+<a href="http://perlmonks.com/index.pl?usersearch=thayer&node=Perl%20Monks%20User%20Search&orderby=createtime%20DESC">perlmonks</a> posts.
+
+<p>
+<li><a href="http://my.yahoo.com/">My Yahoo!</a>
+<li><a href="http://www.amazon.com/gp/registry/registry.html/002-6259650-5791233?%5Fencoding=UTF8&id=N8E3M8ZNBLDB">Amazon Wishlist</a>
+<li><a href="http://www.google.com/">Google</a>: <br>
+  <a href="http://news.google.com/">News</a>,
+  <a href="http://www.google.com/press/zeitgeist.html">Zeitgeist</a>,
+  <a href="http://catalog.google.com/">Catalogs</a>.
+<li><a href="http://www.thinkgeek.com/">ThinkGeek</a>
+<p>
+
+<li>Favorite number: 
+    <a href="http://en.wikipedia.org/wiki/6_%28number%29">6 (six)</a>
+
+</ul>
+</td>
+
+</tr>
+</table>
+<hr noshade size=1>
+
+<p>
+</TD></TR></TABLE>
+@
+
+
+1.15
+log
+@routine
+@
+text
+@d45 1
+a45 1
+  width=100 height=75 align=center valign=center colspan=2>
+d48 1
+a48 1
+     border=0><br><b>Diary</b></a></td>
+@
+
+
+1.14
+log
+@routine
+@
+text
+@d4 1
+a4 1
+<title>Charles Thayer's Homepage: 2010</title>
+@
+
+
+1.13
+log
+@routine
+@
+text
+@d94 1
+a136 1
+<!--
+a150 1
+-->
+d157 1
+a247 1
+(l337: ch4rl3z 7h4y3r)
+@
+
+
+1.12
+log
+@routine
+@
+text
+@d60 1
+a60 1
+  <a href="resume2010.html"><img border=0
+d175 1
+a175 1
+<li><a href="resume2010.html">Resum&eacute; 2010 (Not Looking)</a>
+d178 4
+a181 3
+   <a href="resume2003.html">html</a> /
+   <a href="resume2003.doc">doc</a> /
+   <a href="resume2003.txt">text</a>.<br>
+@
+
+
+1.11
+log
+@routine
+@
+text
+@d175 1
+a175 1
+<li><a href="resume2010.html">Resum&eacute; 2010</a>
+@
+
+
+1.10
+log
+@*** empty log message ***
+@
+text
+@d99 6
+@
+
+
+1.9
+log
+@routine
+@
+text
+@d169 1
+a169 1
+<li><a href="resume2010.html">Resum&eacute; 2010</a> (<a href="resume2003.html">resume2003</a>)
+@
+
+
+1.8
+log
+@routine
+@
+text
+@d179 1
+a179 1
+<li>Teleias Inc.
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d169 8
+d178 1
+a178 1
+<li><a href="http://www.inktomi.com/">Inktomi</a>/<a href="http://www.yahoo.com">Yahoo!</a>
+a184 5
+<p>
+<li>Resum&eacute; (Not Looking): <br>
+   <a href="resume2003.html">html</a> /
+   <a href="resume2003.doc">doc</a> /
+   <a href="resume2003.txt">text</a>.<br>
+@
+
+
+1.6
+log
+@routine
+@
+text
+@d4 1
+a4 1
+<title>Charles Thayer's Homepage: 2008</title>
+d60 1
+a60 1
+  <a href="/resume2003.html"><img border=0
+d75 2
+a76 2
+  <a href="sites.html"><img border=0
+    src="icons-thayer/document.gif"><br><b>Sites</b></a></td>
+d79 1
+a79 1
+  <a href="http://thayer.b2si.com/meme/wiki/moin.cgi/CharlesThayer"><img
+d81 1
+a81 1
+     border=0><br><b>Wiki</b></a></td>
+d98 12
+a109 3
+<Table>
+<Tr><Td> 2008/02: Well, looks like a hostile take-over bid
+is in the air from Microsoft... hmm. --thayer at b2si dot com.
+d112 1
+a112 1
+<Td valign=top>
+d127 4
+d144 3
+a146 1
+</Tr>
+d171 1
+a171 1
+<li><a href="http://www.teleias.com/">Teleias Inc.</a>
+d192 1
+d197 1
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d4 1
+a4 1
+<title>Charles Thayer's Homepage: 2004</title>
+d51 1
+a51 1
+  <a href="http://thayer.b2si.com/meme/wiki/moin.cgi/FriendsNote"><img 
+d102 13
+d117 1
+a117 1
+
+a127 1
+<Td>
+d129 1
+a129 10
+<table border=1 cellpadding=4 cellspacing=0>
+<tr>
+<td>
+<form action="http://search.yahoo.com/search">
+Search Web: 
+<input type=text name=p>
+</form>
+</td>
+</tr>
+</table>
+d131 1
+a131 1
+</Td></Tr>
+d154 1
+a154 1
+
+d195 4
+a198 4
+<li><a href="http://www.furl.net/members/thayer">My Furl Links</a> / 
+    <a href="http://myweb2.search.yahoo.com/myweb?ei=UTF-8&friendid=qLr57Bo8TOOnI.xatVKk">My Web!</a>
+<li><a href="http://groups.google.com/groups?q=author:charles+author:thayer+author:thayer%40&hl=en&start=0&sa=N">My old usenet posts</a>
+<li><a href="http://perlmonks.com/index.pl?usersearch=thayer&node=Perl%20Monks%20User%20Search&orderby=createtime%20DESC">My perlmonks posts</a>
+d208 4
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d2 1
+a2 1
+<!--base href="http://thayer.b2si.com/"-->
+d33 9
+d99 6
+d114 2
+a115 1
+</Td><Td>
+d191 1
+a191 1
+<li><a href="/meme/wiki/moin.cgi/LinkLibrary">LinkLibrary</a>
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d37 3
+a39 3
+  <a href="http://www.advogato.org/person/thayer/"><img 
+    src="icons-thayer/folder.gif"
+    border=0><br><b>Diary</b></a></td>
+d88 9
+a96 1
+2006/09: Wiki is getting upgraded. 
+d99 1
+a99 6
+2006/09: Working for <a href="http://www.yahoo.com/">Yahoo!</a> (who
+acquired <a href="http://www.inktomi.com/">Inktomi</a>) in the
+crawling team, doing linux cluster kung-fu.  What could
+be better than writing software to manage large clusters?  Playing
+with my toddler, and roaming the Bay Area. --thayer at b2si dot com.
+<p>
+d101 2
+a102 1
+<table border=1 cellpadding=4 cellspacing=0><tr>
+d109 5
+a113 8
+<td>
+<form action="http://search.yahoo.com/search">
+Search This Site: 
+<input type=text name=p>
+<input type=hidden name=vs value="thayer.b2si.com">
+</form>
+</td>
+</tr></table>
+a115 3
+The technical <a
+href="http://www.advogato.org/person/thayer/">diary</a> is more
+interesting than this one.  (<a href="diary.html">...</a>)
+d118 2
+d182 1
+a182 2
+<li><a href="http://my.yahoo.com/">My Yahoo!</a>:<br>
+  <a href="http://search.yahoo.com/">Search Yahoo!</a>
+@
+
+
+1.2
+log
+@routine
+@
+text
+@d1 2
+a2 1
+<head><!--base href="http://thayer.b2si.com/"-->
+d35 1
+a35 1
+<td background="/images/hex-dir-nw.gif"
+d40 1
+a40 1
+<td background="/images/hex-dir-ne.gif"
+d49 1
+a49 1
+<td background="/images/hex-dir-w.gif"
+d53 1
+a53 1
+<td background="/images/hex-dir-mid.gif"
+d56 1
+a56 1
+<td background="/images/hex-dir-e.gif"
+d64 1
+a64 1
+<td background="/images/hex-dir-sw.gif"
+d68 1
+a68 1
+<td background="/images/hex-dir-se.gif"
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 1
+a1 1
+<head><base href="http://thayer.b2si.com/">
+d29 1
+a29 1
+<img src="/images/1.gif" border=0 width=310 height=1><br>
+d37 1
+a37 1
+    src="/icons-thayer/folder.gif"
+d42 1
+a42 1
+    src="/icons-thayer/folder.gif" 
+d51 1
+a51 1
+    src="/icons-thayer/folder.gif"><br><b>Work</b></a></td>
+d54 1
+a54 1
+  <img src="/icons-thayer/document.gif"><br><b>Home</b></td>
+d58 1
+a58 1
+    src="/icons-thayer/folder.gif"><br><b>Tools</b></a></td>
+d66 1
+a66 1
+    src="/icons-thayer/document.gif"><br><b>Sites</b></a></td>
+d70 1
+a70 1
+     src="/icons-thayer/folder.gif"
+d78 1
+a78 1
+<img src="/icons-thayer/document.gif" align=right>  
+d150 1
+a150 1
+<td bgcolor=#cccccc width=2><img src="/images/1.gif"></td>
+d170 1
+a170 1
+<td bgcolor=#cccccc width=2><img src="/images/1.gif"></td>
+@

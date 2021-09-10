@@ -1,0 +1,7 @@
+Happy New Year,
+  Over the last year I've been keeping notes on DRF (Django REST Framework). Anything that I had to re-read, lookup, or was a bug in my usage, I wrote down. Over the holidays I had some time to write up my notes in Cheat Sheet form. It's not meant for beginners, but for folks who have been using DRF for a while and just need a handy reference.
+
+* about page: http://thayer.b2si.com/drf.html
+* direct download: bit.ly/django-drf-cheat-sheet
+
+Enjoy! and let me know if you have constructive feedback.  If people find it useful I'll keep it updated.
