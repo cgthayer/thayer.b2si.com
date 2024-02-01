@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Particle Test</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	  crossorigin="anonymous"></script>
+
+  <style>
+  body, td, p {
+    font-family: Verdana, Arial, Helvetica, Chicago, sans-serif;
+    font-size: 12px;
+  }
+  .sh {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  h4 {
+    font-weight: bold;
+  }
+  ul {
+    padding-inline-start: 2em;
+  }
+
+  .panel {
+    background-color: transparent;
+  }
+  .panel-primary>.panel-heading {
+    background-image: none;
+    background-color: #0066CC;
+    border-color: #0066CC;
+  }
+  .panel-primary {
+    margin-bottom: 0.5em;
+  }
+  .panel-heading {
+    padding: 0.5em;
+  }
+  .panel-body {
+    padding: 0.5em;
+    background-color: transparent;
+  }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 style="font-size: 14pt;"><b>Charles Thayer</b>
+	<img src="icons-thayer/document.gif" align=right>  
+	(<a href="http://thayer.b2si.com/">thayer.b2si.com</a>)
+      </h1>
+      <hr noshade style="height: 1px;">
+    </div>
+  </div>
+</div>  
+
+<div id="particles-js"></div>
+<script src="js/particles.js"></script>
+<script>
+  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+  particlesJS.load('particles-js', 'js/particles-config.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
+</script>
+
